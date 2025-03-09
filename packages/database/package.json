@@ -1,5 +1,5 @@
 {
-  "name": "@repo/database",
+  "name": "@thaitype-com/database",
   "version": "1.0.0",
   "exports": {
     ".": "./src/client.ts"
@@ -21,8 +21,8 @@
     "@prisma/client": "latest"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@thaitype-com/eslint-config": "workspace:*",
+    "@thaitype-com/typescript-config": "workspace:*",
     "eslint": "^8.57.0",
     "prisma": "latest",
     "rimraf": "^5.0.5",

@@ -40,13 +40,13 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.1.1
         version: 14.2.24
-      '@repo/database':
+      '@thaitype-com/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@repo/eslint-config':
+      '@thaitype-com/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config-eslint
-      '@repo/typescript-config':
+      '@thaitype-com/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-typescript
       '@types/node':
@@ -97,10 +97,10 @@ importers:
         specifier: latest
         version: 6.4.1(prisma@6.4.1(typescript@5.5.4))(typescript@5.5.4)
     devDependencies:
-      '@repo/eslint-config':
+      '@thaitype-com/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
-      '@repo/typescript-config':
+      '@thaitype-com/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
       eslint:

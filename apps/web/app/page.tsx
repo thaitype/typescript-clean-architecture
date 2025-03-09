@@ -1,4 +1,4 @@
-import { prisma } from "@repo/database";
+import { prisma } from "@thaitype-com/database";
 
 export default async function IndexPage() {
   const users = await prisma.user.findMany();
