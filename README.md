@@ -106,3 +106,7 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+## References
+- Drizzle Turbo Repo Template: https://github.com/htsh-tsyk/turbo-drizzle/tree/main
+- Next.js Clean Architecture: https://github.com/nikolovlazar/nextjs-clean-architecture/tree/main

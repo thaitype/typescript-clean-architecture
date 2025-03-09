@@ -5,8 +5,6 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "db:seed": "tsx scripts/seed.ts",
-    "db:migrate": "tsx scripts/migrate.ts",
     "db:studio": "drizzle-kit studio",
     "generate": "drizzle-kit generate"
   },

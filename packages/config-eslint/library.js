@@ -1,3 +1,4 @@
+const { rules } = require("eslint-config-prettier");
 const { resolve } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
@@ -31,4 +32,11 @@ module.exports = {
       files: ["*.js?(x)", "*.ts?(x)"],
     },
   ],
+  rules: {
+    /**
+     * Enforce consistent usage of type imports.
+     * @see https://typescript-eslint.io/rules/consistent-type-imports/
+     */
+    '@typescript-eslint/consistent-type-imports': "error",
+  }
 };

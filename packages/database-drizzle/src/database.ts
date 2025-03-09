@@ -1,16 +1,18 @@
 import "dotenv/config";
 
-import { drizzle } from "drizzle-orm/postgres-js";
+import { drizzle, PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
 import * as schema from "./schema";
 
-const getEnvVariable = (name: string) => {
-  const value = process.env[name];
-  if (value == null) throw new Error(`environment variable ${name} not found`);
-  return value;
-};
+export interface DbContext<T extends Record<string, unknown> = Record<string, unknown>> {
+  client: postgres.Sql;
+  db: PostgresJsDatabase<T>;
+}
 
-export const client = postgres(getEnvVariable("DATABASE_URL"));
+export function getDbContext(databaseUrl: string): DbContext<typeof schema> {
+  const client = postgres(databaseUrl);
+  const db = drizzle(client, { schema });
+  return { client, db };
+}
 
-export const db = drizzle(client, { schema });
