@@ -23,6 +23,9 @@
       "cache": false,
       "persistent": true
     },
+    "db:migrate": {
+      "outputs": []
+    },
     "generate": {
       "dependsOn": ["^generate"],
       "cache": false
