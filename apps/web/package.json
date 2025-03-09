@@ -12,6 +12,7 @@
     "db:migrate": "tsx scripts/migrate.ts"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "next": "^15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

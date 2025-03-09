@@ -110,3 +110,4 @@ Learn more about the power of Turborepo:
 ## References
 - Drizzle Turbo Repo Template: https://github.com/htsh-tsyk/turbo-drizzle/tree/main
 - Next.js Clean Architecture: https://github.com/nikolovlazar/nextjs-clean-architecture/tree/main
+- Next.js 15 on turborepo template: https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/basic

@@ -1,7 +1,7 @@
 "use server";
 
-import { db } from "@acme/database-drizzle";
+import { dbContext } from '../core/bootstrap';
 
 export const fetchUsers = async () => {
-  return db.query.users.findMany();
+  return dbContext.db.query.users.findMany();
 };

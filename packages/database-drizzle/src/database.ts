@@ -10,7 +10,9 @@ export interface DbContext<T extends Record<string, unknown> = Record<string, un
   db: PostgresJsDatabase<T>;
 }
 
-export function getDbContext(databaseUrl: string): DbContext<typeof schema> {
+export type DbContextWithSchema = DbContext<typeof schema>;
+
+export function getDbContext(databaseUrl: string): DbContextWithSchema {
   const client = postgres(databaseUrl);
   const db = drizzle(client, { schema });
   return { client, db };
