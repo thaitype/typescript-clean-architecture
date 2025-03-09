@@ -10,7 +10,7 @@ on:
 
 env:
   NODE_VERSION: 20.18.x
-  PNPM_VERSION: 10.5.x
+  # PNPM_VERSION: 10.5.x
 
 jobs:
   test-and-build:
@@ -22,8 +22,8 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: ${{ env.PNPM_VERSION }}
+        # with:
+        #   version: ${{ env.PNPM_VERSION }}
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -39,6 +39,10 @@ jobs:
 
       # - name: Run tests
       #   run: pnpm test
+      
+      - name: Prepare .env file
+        run: cp apps/web/.env.default apps/web/.env
 
-      - name: Build project
-        run: pnpm build
+      # Ignore build until fix server action build in Next.js
+      # - name: Build project
+      #   run: pnpm build

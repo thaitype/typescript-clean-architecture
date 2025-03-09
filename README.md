@@ -1,4 +1,8 @@
-# Turborepo starter with Drizzle ORM and PostgresSQL
+# TypeScript Clean Architecture
+
+[![Test and Build](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml)
+
+> In progess!
 
 This is turborepo starter with Drizzle ORM and PostgreSQL pre-configured.
 
