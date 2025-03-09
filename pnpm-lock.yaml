@@ -33,13 +33,13 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.1.1
         version: 14.2.24
-      '@thaitype-com/database':
+      '@acme/database':
         specifier: workspace:*
         version: link:../../packages/database
-      '@thaitype-com/eslint-config':
+      '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config-eslint
-      '@thaitype-com/typescript-config':
+      '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-typescript
       '@types/node':
@@ -96,10 +96,10 @@ importers:
         specifier: ^3.4.5
         version: 3.4.5
     devDependencies:
-      '@thaitype-com/eslint-config':
+      '@acme/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
-      '@thaitype-com/typescript-config':
+      '@acme/typescript-config':
         specifier: workspace:*
         version: link:../config-typescript
       '@types/node':

@@ -1,5 +1,5 @@
 {
-  "extends": "@thaitype-com/typescript-config/nextjs.json",
+  "extends": "@acme/typescript-config/nextjs.json",
   "compilerOptions": { "plugins": [{ "name": "next" }] },
   "include": [
     "next-env.d.ts",

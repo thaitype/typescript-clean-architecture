@@ -1,5 +1,5 @@
 {
-  "name": "@thaitype-com/eslint-config",
+  "name": "@acme/eslint-config",
   "version": "0.0.0",
   "private": true,
   "files": [

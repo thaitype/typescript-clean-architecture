@@ -15,9 +15,9 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",
-    "@thaitype-com/database": "workspace:*",
-    "@thaitype-com/eslint-config": "workspace:*",
-    "@thaitype-com/typescript-config": "workspace:*",
+    "@acme/database": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/typescript-config": "workspace:*",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",

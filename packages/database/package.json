@@ -1,5 +1,5 @@
 {
-  "name": "@thaitype-com/database",
+  "name": "@acme/database",
   "version": "1.0.0",
   "exports": {
     ".": "./src/index.ts"
@@ -16,8 +16,8 @@
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "@thaitype-com/eslint-config": "workspace:*",
-    "@thaitype-com/typescript-config": "workspace:*",
+    "@acme/eslint-config": "workspace:*",
+    "@acme/typescript-config": "workspace:*",
     "@types/node": "^20.11.24",
     "drizzle-kit": "^0.30.5",
     "eslint": "^8.57.0",
