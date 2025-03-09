@@ -2,29 +2,25 @@
   "name": "@thaitype-com/database",
   "version": "1.0.0",
   "exports": {
-    ".": "./src/client.ts"
+    ".": "./src/index.ts"
   },
   "scripts": {
-    "db:migrate:deploy": "prisma migrate deploy",
-    "db:migrate:dev": "prisma migrate dev",
-    "db:push": "prisma db push",
-    "db:seed": "tsx src/seed.ts",
-    "dev": "tsup src/* --watch",
-    "format": "prisma format",
-    "generate": "prisma generate",
-    "lint": "eslint . --max-warnings 0",
-    "prebuild": "npm run generate",
-    "predev": "npm run generate",
-    "studio": "prisma studio"
+    "db:seed": "tsx scripts/seed.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:studio": "drizzle-kit studio",
+    "generate": "drizzle-kit generate"
   },
   "dependencies": {
-    "@prisma/client": "latest"
+    "@libsql/client": "^0.14.0",
+    "drizzle-orm": "^0.40.0",
+    "postgres": "^3.4.5"
   },
   "devDependencies": {
     "@thaitype-com/eslint-config": "workspace:*",
     "@thaitype-com/typescript-config": "workspace:*",
+    "@types/node": "^20.11.24",
+    "drizzle-kit": "^0.30.5",
     "eslint": "^8.57.0",
-    "prisma": "latest",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
     "tsx": "4.19.1",
