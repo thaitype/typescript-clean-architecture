@@ -8,11 +8,10 @@
     "db:seed": "tsx scripts/seed.ts",
     "db:migrate": "tsx scripts/migrate.ts",
     "db:studio": "drizzle-kit studio",
-    "generate": "drizzle-kit generate:pg"
+    "generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",
-    "@prisma/client": "latest",
     "drizzle-orm": "^0.40.0",
     "postgres": "^3.4.5"
   },
@@ -22,7 +21,6 @@
     "@types/node": "^20.11.24",
     "drizzle-kit": "^0.30.5",
     "eslint": "^8.57.0",
-    "prisma": "latest",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
     "tsx": "4.19.1",

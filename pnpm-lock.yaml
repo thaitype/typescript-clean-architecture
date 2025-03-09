@@ -7,17 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@prisma/client':
-        specifier: latest
-        version: 6.4.1(prisma@6.4.1(typescript@5.5.4))(typescript@5.5.4)
     devDependencies:
       prettier:
         specifier: ^3.2.5
         version: 3.5.3
-      prisma:
-        specifier: latest
-        version: 6.4.1(typescript@5.5.4)
       tsx:
         specifier: 4.19.1
         version: 4.19.1
@@ -96,9 +89,6 @@ importers:
       '@libsql/client':
         specifier: ^0.14.0
         version: 0.14.0
-      '@prisma/client':
-        specifier: latest
-        version: 6.4.1(prisma@6.4.1(typescript@5.5.4))(typescript@5.5.4)
       drizzle-orm:
         specifier: ^0.40.0
         version: 0.40.0(@libsql/client@0.14.0)(@prisma/client@6.4.1(prisma@6.4.1(typescript@5.5.4))(typescript@5.5.4))(gel@2.0.1)(postgres@3.4.5)(prisma@6.4.1(typescript@5.5.4))
@@ -121,9 +111,6 @@ importers:
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
-      prisma:
-        specifier: latest
-        version: 6.4.1(typescript@5.5.4)
       rimraf:
         specifier: ^5.0.5
         version: 5.0.10
@@ -2388,7 +2375,6 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
-    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lilconfig@3.1.3:
@@ -3814,10 +3800,13 @@ snapshots:
     optionalDependencies:
       prisma: 6.4.1(typescript@5.5.4)
       typescript: 5.5.4
+    optional: true
 
-  '@prisma/debug@6.4.1': {}
+  '@prisma/debug@6.4.1':
+    optional: true
 
-  '@prisma/engines-version@6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d': {}
+  '@prisma/engines-version@6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d':
+    optional: true
 
   '@prisma/engines@6.4.1':
     dependencies:
@@ -3825,16 +3814,19 @@ snapshots:
       '@prisma/engines-version': 6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d
       '@prisma/fetch-engine': 6.4.1
       '@prisma/get-platform': 6.4.1
+    optional: true
 
   '@prisma/fetch-engine@6.4.1':
     dependencies:
       '@prisma/debug': 6.4.1
       '@prisma/engines-version': 6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d
       '@prisma/get-platform': 6.4.1
+    optional: true
 
   '@prisma/get-platform@6.4.1':
     dependencies:
       '@prisma/debug': 6.4.1
+    optional: true
 
   '@rollup/rollup-android-arm-eabi@4.35.0':
     optional: true
@@ -4597,6 +4589,7 @@ snapshots:
       esbuild: 0.25.0
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   esbuild@0.18.20:
     optionalDependencies:
@@ -5685,6 +5678,7 @@ snapshots:
       typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   promise-limit@2.7.0: {}
 
