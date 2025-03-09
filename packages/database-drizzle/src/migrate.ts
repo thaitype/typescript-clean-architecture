@@ -1,6 +1,5 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import { migrate as migrateSchema } from "drizzle-orm/postgres-js/migrator";
-import type { Sql } from "postgres";
 import { DbContext } from './database';
 
 export interface MigrationOptions extends DbContext {
