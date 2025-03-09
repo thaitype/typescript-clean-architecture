@@ -30,18 +30,18 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@next/eslint-plugin-next':
-        specifier: ^14.1.1
-        version: 14.2.24
-      '@acme/database':
+      '@acme/database-drizzle':
         specifier: workspace:*
-        version: link:../../packages/database
+        version: link:../../packages/database-drizzle
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../packages/config-eslint
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../packages/config-typescript
+      '@next/eslint-plugin-next':
+        specifier: ^14.1.1
+        version: 14.2.24
       '@types/node':
         specifier: ^20.11.24
         version: 20.17.24
@@ -84,7 +84,7 @@ importers:
 
   packages/config-typescript: {}
 
-  packages/database:
+  packages/database-drizzle:
     dependencies:
       '@libsql/client':
         specifier: ^0.14.0

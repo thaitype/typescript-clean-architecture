@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",
-    "@acme/database": "workspace:*",
+    "@acme/database-drizzle": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@types/node": "^20.11.24",
