@@ -42,7 +42,6 @@ To build all apps and packages, run the following command:
 
 ```
 cd turbo-drizzle
-cp packages/database/.env.default packages/database/.env
 cp apps/web/.env.default apps/web/.env
 pnpm install
 pnpm build
@@ -62,13 +61,18 @@ docker-compose up -d
 Once deployed you will need to copy the `.env.default` file to `.env` in order for Drizzle to have a `DATABASE_URL` environment variable to access.
 
 ```bash
-cp packages/database/.env.default packages/database/.env
 cp apps/web/.env.default apps/web/.env
 ```
 
 If you added a custom database name, or use a cloud based database, you will need to update the `DATABASE_URL` in your `.env` accordingly.
 
 Once deployed & up & running, you will need to create & deploy migrations to your database to add the necessary tables. This can be done using [Drizzle Migrate](https://orm.drizzle.team/docs/migrations):
+
+in `database` package: (command `drizzle-kit generate`)
+
+```
+pnpm generate
+```
 
 ```bash
 pnpm turbo db:migrate

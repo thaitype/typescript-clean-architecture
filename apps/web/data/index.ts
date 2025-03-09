@@ -2,6 +2,6 @@
 
 import { db } from "@thaitype-com/database";
 
-export const fetchPosts = async () => {
-  return db.query.posts.findMany();
+export const fetchUsers = async () => {
+  return db.query.users.findMany();
 };
