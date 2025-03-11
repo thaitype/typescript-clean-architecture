@@ -18,7 +18,7 @@ importers:
         specifier: ^2.4.4
         version: 2.4.4
 
-  apps/web:
+  apps/nextjs:
     dependencies:
       dotenv:
         specifier: ^16.4.7

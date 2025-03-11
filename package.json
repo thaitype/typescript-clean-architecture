@@ -19,6 +19,6 @@
   "engines": {
     "node": ">=18"
   },
-  "name": "with-prisma",
+  "name": "typescript-clean-architecture",
   "packageManager": "pnpm@10.5.2"
 }
