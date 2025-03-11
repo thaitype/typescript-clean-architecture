@@ -145,6 +145,22 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
+  tools/db:
+    dependencies:
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
+    devDependencies:
+      '@acme/database-drizzle':
+        specifier: workspace:*
+        version: link:../../packages/database-drizzle
+      '@acme/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/config-eslint
+      '@acme/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+
 packages:
 
   '@drizzle-team/brocli@0.10.2':
