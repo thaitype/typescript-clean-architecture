@@ -38,10 +38,10 @@ importers:
         version: link:../../packages/database-drizzle
       '@acme/eslint-config':
         specifier: workspace:*
-        version: link:../../packages/config-eslint
+        version: link:../../configs/config-eslint
       '@acme/typescript-config':
         specifier: workspace:*
-        version: link:../../packages/config-typescript
+        version: link:../../configs/config-typescript
       '@next/eslint-plugin-next':
         specifier: ^14.1.1
         version: 14.2.24
@@ -64,7 +64,7 @@ importers:
         specifier: 5.8.2
         version: 5.8.2
 
-  packages/config-eslint:
+  configs/config-eslint:
     devDependencies:
       '@eslint/js':
         specifier: ^9.21.0
@@ -100,7 +100,7 @@ importers:
         specifier: ^8.26.0
         version: 8.26.0(eslint@9.22.0)(typescript@5.8.2)
 
-  packages/config-typescript: {}
+  configs/config-typescript: {}
 
   packages/database-drizzle:
     dependencies:
@@ -119,10 +119,10 @@ importers:
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
-        version: link:../config-eslint
+        version: link:../../configs/config-eslint
       '@acme/typescript-config':
         specifier: workspace:*
-        version: link:../config-typescript
+        version: link:../../configs/config-typescript
       '@types/node':
         specifier: ^20.11.24
         version: 20.17.24
