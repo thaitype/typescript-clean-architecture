@@ -1,4 +1,4 @@
-import { UserUseCase } from "@acme/application/use-cases/UserUseCase";
+import { UserUseCase } from "@acme/application";
 
 export class UserController {
   constructor(private userUseCase: UserUseCase) {}

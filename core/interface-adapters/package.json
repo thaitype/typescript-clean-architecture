@@ -2,8 +2,7 @@
   "name": "@acme/interface-adapters",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts",
-    "./controllers/*": "./src/controllers/*.ts"
+    ".": "./src/index.ts"
   },
   "private": true,
   "scripts": {

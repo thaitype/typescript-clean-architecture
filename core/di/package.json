@@ -1,5 +1,5 @@
 {
-  "name": "@acme/application",
+  "name": "@acme/di",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -15,7 +15,10 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@acme/domain": "workspace:*"
+    "@acme/domain": "workspace:*",
+    "@acme/application": "workspace:*",
+    "@acme/infrastructure": "workspace:*",
+    "@acme/interface-adapters": "workspace:*"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",

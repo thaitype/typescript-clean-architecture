@@ -1,4 +1,4 @@
-import { User } from "@acme/domain/entities";
+import { User } from "@acme/domain";
 import { IUserRepository } from "../interfaces/IUserRepository";
 
 export class UserUseCase {
