@@ -19,10 +19,6 @@
     "db:seed": {
       "cache": false
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "db:migrate": {
       "outputs": []
     },
@@ -30,6 +26,27 @@
       "dependsOn": ["^generate"],
       "cache": false
     },
-    "lint": {}
+    "test": {
+      "dependsOn": ["@acme/vitest-config#build", "^test"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint:check": {
+      "dependsOn": ["@acme/vitest-config#build", "^lint:check"]
+    },
+    "lint:fix": {},
+    "format:check": {
+      "dependsOn": ["^format:check"]
+    },
+    "format:fix": {},
+    "check-types": {
+      "dependsOn": ["@acme/vitest-config#build", "^check-types"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
   }
 }

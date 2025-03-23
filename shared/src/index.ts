@@ -1,1 +1,1 @@
-console.log('shared/src/index.ts');
+export * from './lib/shared';
