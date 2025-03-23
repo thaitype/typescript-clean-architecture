@@ -1,0 +1,9 @@
+{
+  "name": "@acme/shared",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/typescript-config": "workspace:*"
+  }
+}

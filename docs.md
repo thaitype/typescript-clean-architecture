@@ -99,3 +99,7 @@ style J fill:#eee,stroke:#666,stroke-dasharray: 3
 ```
 
 ---
+
+## Using Turborepo on VS Code
+
+This may type not update, use `CMD + Shift + P` and type "TypeScript: Restart TypeScrip Server" to update the type.
