@@ -1,1 +1,1 @@
-export * from './lib/shared';
+export * from './entities/User';

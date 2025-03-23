@@ -1,5 +1,5 @@
 {
-  "name": "@acme/domain",
+  "name": "@acme/application",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -13,6 +13,9 @@
     "format:check": "prettier -c src",
     "format:fix": "prettier --write src",
     "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@acme/domain": "workspace:*"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
