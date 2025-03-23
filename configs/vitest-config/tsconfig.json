@@ -1,8 +1,8 @@
 {
   "extends": ["@acme/typescript-config/base.json"],
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
   },
   "include": ["configs", "scripts"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "**/node_modules", "../../node_modules"]
 }
