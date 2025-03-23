@@ -232,6 +232,10 @@ importers:
         version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
 
   core/interface-adapters:
+    dependencies:
+      '@acme/application':
+        specifier: workspace:*
+        version: link:../application
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*

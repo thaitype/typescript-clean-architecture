@@ -1,4 +1,4 @@
-import { IUserRepository } from "@acme/application";
+import { IUserRepository } from "@acme/application/interfaces/IUserRepository";
 import { User } from "@acme/domain";
 
 export class UserRepository implements IUserRepository {

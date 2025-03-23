@@ -2,7 +2,9 @@
   "name": "@acme/application",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./use-cases/*": "./src/use-cases/*.ts",
+    "./interfaces/*": "./src/interfaces/*.ts"
   },
   "private": true,
   "scripts": {
