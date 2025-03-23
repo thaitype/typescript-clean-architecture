@@ -5,8 +5,7 @@ export default async function IndexPage() {
 
   return (
     <div>
-      <h1>User List: </h1>Í
-      {/* <pre>{JSON.stringify(users, null, 2)}</pre> */}
+      <h1>User List: </h1>Í{/* <pre>{JSON.stringify(users, null, 2)}</pre> */}
     </div>
   );
 }
