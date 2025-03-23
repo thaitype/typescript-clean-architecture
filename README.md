@@ -1,117 +1,308 @@
-# TypeScript Clean Architecture
+# 🧱 Clean Architecture Template for TypeScript Monorepos
 
-[![Test and Build](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml)
+This is a **Clean Architecture starter template** designed for monorepos using **Turborepo** + **pnpm** + **TypeScript**. It's simple enough to get started quickly and scalable enough to grow into a large production system.
 
-> In progess!
+---
 
-This is turborepo starter with Drizzle ORM and PostgreSQL pre-configured.
+## ⚡ Quick Start
 
-> [!NOTE]
-> This example uses `pnpm` as package manager.
-
-## Using this example
-
-Clone the repository:
-
-```sh
-git clone https://github.com/htsh-tsyk/turbo-drizzle.git
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/database`: Drizzle ORM wrapper to manage & access your database
-- `@repo/ui`: a stub React component library shared by a `web` application
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Drizzle for database ORM](https://orm.drizzle.team/) for database ORM
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd turbo-drizzle
-cp apps/web/.env.default apps/web/.env
+```bash
+git clone https://github.com/your-org/your-repo.git
+cd your-repo
 pnpm install
-pnpm build
-```
-
-### Database
-
-We use [Drizzle ORM](https://orm.drizzle.team/) to manage & access our database. As such you will need a database for this project, either locally or hosted in the cloud.
-
-To make this process easier, we offer a [`docker-compose.yml`](https://docs.docker.com/compose/) file to deploy a PostgreSQL server locally with a new database named `repo_development` (To change this update the `POSTGRES_DB` environment variable in the `docker-compose.yml` file):
-
-```bash
-cd turbo-drizzle
-docker-compose up -d
-```
-
-Once deployed you will need to copy the `.env.default` file to `.env` in order for Drizzle to have a `DATABASE_URL` environment variable to access.
-
-```bash
-cp apps/web/.env.default apps/web/.env
-```
-
-If you added a custom database name, or use a cloud based database, you will need to update the `DATABASE_URL` in your `.env` accordingly.
-
-Once deployed & up & running, you will need to create & deploy migrations to your database to add the necessary tables. This can be done using [Drizzle Migrate](https://orm.drizzle.team/docs/migrations):
-
-in `database` package: (command `drizzle-kit generate`)
-
-```
-pnpm generate
-```
-
-```bash
-pnpm turbo db:migrate
-```
-
-An optional additional step is to seed some initial or fake data to your database.
-
-To do this update check the seed script located in `packages/database/scripts/seed.ts` & add or update any users you wish to seed to the database.
-
-Once edited run the following command to run tell Drizzle to run the seed script defined in the Drizzle configuration:
-
-```bash
-pnpm turbo db:seed
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```shell
 pnpm dev
 ```
 
-## Useful Links
+---
 
-Learn more about the power of Turborepo:
+## 🧠 What is Clean Architecture?
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+**Clean Architecture** is a way to structure your application so that:
 
-## References
-- Drizzle Turbo Repo Template: https://github.com/htsh-tsyk/turbo-drizzle/tree/main
-- Next.js Clean Architecture: https://github.com/nikolovlazar/nextjs-clean-architecture/tree/main
-- Next.js 15 on turborepo template: https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/basic
+- Business logic is **independent** from frameworks (e.g. Express, Next.js)
+- Code is **testable**, **modular**, and easy to **extend**
+- Dependencies always point **inward**, from outer layers toward the core
+
+## 🤔 Why Clean Architecture?
+
+Clean Architecture helps you:
+
+- ✨ Write framework-agnostic business logic
+- 🧪 Test use cases in isolation (no DB or HTTP server needed)
+- 🧱 Structure your code for long-term maintainability
+- 🧩 Easily swap implementations (e.g. Mongo → Postgres, REST → GraphQL)
+- 👥 Onboard teammates faster with a predictable, layered system
+
+---
+
+### Core Principles:
+
+| Layer                 | Responsibility                                                                 |
+|----------------------|----------------------------------------------------------------------------------|
+| **Domain**           | Business entities, rules, invariants (pure, stable)                             |
+| **Application**      | Use cases, business workflows, interfaces for repositories/services             |
+| **Interface Adapters** | Controllers, presenters, mappers, validators (connect input/output to use cases) |
+| **Infrastructure**   | Concrete implementations of services, repositories (DB, APIs, email, etc.)      |
+| **DI (Dependency Injection)** | Wiring dependencies to keep layers decoupled                                |
+
+---
+
+## 🚀 Starter Project Structure
+
+A minimal setup that helps you get started quickly:
+
+```bash
+.
+├── apps/
+│   └── web/                  # App entry point (e.g., Next.js, Express)
+├── core/
+│   ├── domain/              # Business entities
+│   ├── application/         # Use cases and interfaces
+│   ├── interface-adapters/  # Controllers, mappers, validators
+│   ├── infrastructure/      # Contracts only (not implementations)
+│   └── di/                  # DI container & registry
+├── packages/
+│   └── db-postgres/         # Postgres implementation of repositories
+└── shared/                  # Common types, utils, constants
+```
+
+## 🔗 High-Level Dependency Diagram
+
+**Arrow direction (→)** means "depends on" or "uses" — the arrow always points from the **dependent** to the **dependency**.
+
+### 🔍 Example Interpretation:
+- `application → domain`  
+  ↳ e.g., `CreateUserUseCase` uses `User` entity → `import { User } from "@acme/domain"`
+
+- `interface-adapters → application`  
+  ↳ e.g., `UserController` calls `CreateUserUseCase` → `import { CreateUserUseCase } from "@acme/application"`
+
+- `infrastructure → application`  
+  ↳ e.g., `UserRepository` implements `IUserRepository` → `import { IUserRepository } from "@acme/application"`
+
+- `apps/web → di`  
+  ↳ e.g., web app resolves controller via DI → `const userController = resolve("UserController")`
+
+- `shared → all`  
+  ↳ e.g., shared `utils`, `types`, or `constants` are imported across layers
+
+For example:
+- `application → domain` = Application layer depends on domain models
+- `interface-adapters → application` = Controllers use application use cases
+- `infrastructure → application` = Implementations depend on interfaces defined in application
+- `apps/web → di` = App depends on the DI wiring
+
+```mermaid
+graph TD
+
+%% Core layers
+A[domain] --> B[application]
+B --> C[interface-adapters]
+B --> D[infrastructure]
+C --> E[di]
+D --> E
+
+%% App layer
+E --> F[apps/web]
+
+%% External packages
+H[packages/db-postgres] --> D
+
+%% Shared
+J[shared] --> B
+J --> C
+J --> D
+J --> E
+J --> F
+
+style A fill:#f9f,stroke:#333,stroke-width:2
+style B fill:#bbf,stroke:#333,stroke-width:2
+style C fill:#cfc,stroke:#333,stroke-width:2
+style D fill:#fcc,stroke:#333,stroke-width:2
+style E fill:#ffc,stroke:#333,stroke-width:2
+style F fill:#eee,stroke:#333,stroke-width:2
+style H fill:#ddd,stroke:#999,stroke-dasharray: 5
+style J fill:#eee,stroke:#666,stroke-dasharray: 3
+```
+
+---
+
+## 🌱 Future Project Structure (Scalable & Modular)
+
+Once your project grows, the structure expands like this:
+
+```bash
+.
+├── apps/
+│   ├── web/                 # Web/API app
+│   └── cli/                 # CLI commands (optional)
+│
+├── core/
+│   ├── domain/
+│   │   ├── entities/
+│   │   ├── value-objects/
+│   │   └── errors/
+│   ├── application/
+│   │   ├── use-cases/
+│   │   │   ├── commands/
+│   │   │   └── queries/
+│   │   └── interfaces/
+│   ├── interface-adapters/
+│   │   ├── controllers/
+│   │   ├── graphql/             # GraphQL resolvers
+│   │   ├── cli/                 # CLI entry points
+│   │   ├── webhooks/            # Webhook handlers (e.g., Stripe)
+│   │   ├── events/              # Event-driven adapters (e.g., RabbitMQ)
+│   │   ├── middlewares/         # HTTP middlewares
+│   │   ├── presenters/          # View-friendly formatters (DTOs)
+│   │   └── validators/          # Zod/Yup validators
+│   ├── infrastructure/
+│   │   ├── gateways/
+│   │   └── persistence/
+│   └── di/
+│       ├── container.ts
+│       ├── ServiceRegistry.ts
+│       └── resolve.ts
+│
+├── packages/
+│   ├── db-mongodb/          # MongoDB implementation
+│   ├── db-postgres/         # PostgreSQL implementation
+│   ├── cache-redis/         # Redis cache adapter (for ICacheService)
+│   ├── mq-rabbitmq/         # RabbitMQ adapter (for IMessageQueueService)
+│   ├── email-sendgrid/      # SendGrid adapter
+│   └── logger-pino/         # Pino logger service
+│
+├── shared/
+│   ├── types/
+│   ├── utils/
+│   ├── config/
+│   └── constants/
+│
+├── tools/                   # Scripts, CLI helpers
+└── design-system/           # (Optional) UI components
+```
+
+---
+
+## 🔗 High-Level Dependency Diagram
+
+```mermaid
+graph TD
+
+%% Core layers
+A[domain] --> B[application]
+B --> C[interface-adapters]
+B --> D[infrastructure]
+C --> E[di]
+D --> E
+
+%% App layer
+E --> F[apps/web]
+
+%% External packages
+G[packages/db-mongodb] --> D
+H[packages/db-postgres] --> D
+I[packages/email-sendgrid] --> D
+X[packages/cache-redis] --> D
+Y[packages/mq-rabbitmq] --> D
+
+%% Shared
+J[shared] --> B
+J --> C
+J --> D
+J --> E
+J --> F
+
+style A fill:#f9f,stroke:#333,stroke-width:2
+style B fill:#bbf,stroke:#333,stroke-width:2
+style C fill:#cfc,stroke:#333,stroke-width:2
+style D fill:#fcc,stroke:#333,stroke-width:2
+style E fill:#ffc,stroke:#333,stroke-width:2
+style F fill:#eee,stroke:#333,stroke-width:2
+style G fill:#ddd,stroke:#999,stroke-dasharray: 5
+style H fill:#ddd,stroke:#999,stroke-dasharray: 5
+style I fill:#ddd,stroke:#999,stroke-dasharray: 5
+style X fill:#ddd,stroke:#999,stroke-dasharray: 5
+style Y fill:#ddd,stroke:#999,stroke-dasharray: 5
+style J fill:#eee,stroke:#666,stroke-dasharray: 3
+```
+
+---
+
+## 🧠 Dependency Injection
+
+This template uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus) — a simple, metadata-free IoC container for TypeScript that works across runtimes (Node, Edge, etc).
+
+---
+
+## 🧪 Example Usage
+
+```ts
+// apps/web/index.ts
+import { resolve } from "@acme/di";
+
+const userController = resolve("UserController");
+await userController.create({
+  body: { id: "u1", name: "Alice" },
+});
+```
+
+---
+
+## 🧪 Testing
+
+Because each layer is isolated, you can easily test use cases like this:
+
+```ts
+import { CreateUserUseCase } from "@acme/application";
+
+const mockRepo = {
+  create: vi.fn(),
+};
+
+const useCase = new CreateUserUseCase(mockRepo);
+await useCase.execute({ id: "u1", name: "Alice", email: "test@example.com" });
+```
+
+---
+
+## 📚 Glossary
+
+| Term              | Meaning                                                                 |
+|-------------------|-------------------------------------------------------------------------|
+| **Use Case**       | One unit of business logic (e.g. CreateUser)                            |
+| **Controller**     | Handles incoming requests and calls use cases                          |
+| **Presenter**      | Formats output for UI or external clients                              |
+| **Gateway**        | Interface to external systems (e.g. DB, Email, Redis)                  |
+| **Interface Adapter** | Layer that translates between external input/output and core logic     |
+| **Repository**     | Contract for accessing data, implemented in infrastructure              |
+
+---
+
+## 🛠 Getting Started
+
+1. Clone the repo
+2. Run `pnpm install`
+3. Start hacking in `/core/`
+
+---
+
+Happy coding! ✨ Let your architecture evolve, not collapse. 🏗️
+
+---
+
+## Q&A
+
+### 🆚 Shared vs Domain
+
+### `shared/`
+- Generic, reusable code: utilities, types, config loaders, constants
+- Not tied to any business logic
+- Can be used by any layer **except** `domain`
+- Example: `formatDate()`, `PaginatedResult<T>`, `Zod` validators
+
+### `domain/`
+- Contains business entities, rules, and core logic
+- No external dependencies — must be 100% pure and stable
+- Should not import from `shared` (to preserve isolation)
+- Example: `User`, `Order`, `EmailAddress`, domain-specific errors

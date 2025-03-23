@@ -20,5 +20,8 @@
     "node": ">=18"
   },
   "name": "typescript-clean-architecture",
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.5.2",
+  "dependencies": {
+    "@thaitype/ioctopus": "^2.0.0"
+  }
 }
