@@ -106,6 +106,15 @@ importers:
 
   configs/config-typescript: {}
 
+  core/domain:
+    devDependencies:
+      '@acme/eslint-config':
+        specifier: workspace:*
+        version: link:../../configs/config-eslint
+      '@acme/typescript-config':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+
   packages/database-drizzle:
     dependencies:
       '@libsql/client':
