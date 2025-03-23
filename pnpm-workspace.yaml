@@ -1,5 +1,7 @@
 packages:
   - "apps/*"
+  - "core/*"
   - "packages/*"
   - "configs/*"
   - "tools/*"
+  - "shared"
