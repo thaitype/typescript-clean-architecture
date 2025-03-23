@@ -1,8 +1,5 @@
 {
-  "extends": "@acme/typescript-config/base.json",
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-  ],
+  "extends": "@acme/typescript-config/bundler.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "tsup.config.ts"],
   "exclude": ["node_modules"]
 }

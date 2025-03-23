@@ -144,9 +144,27 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/prettier-config':
+        specifier: workspace:*
+        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
+      '@acme/vitest-config':
+        specifier: workspace:*
+        version: link:../../configs/vitest-config
+      '@vitest/coverage-istanbul':
+        specifier: ^3.0.8
+        version: 3.0.9(vitest@3.0.9)
+      eslint:
+        specifier: ^9.22.0
+        version: 9.22.0
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
 
   packages/database-drizzle:
     dependencies:
