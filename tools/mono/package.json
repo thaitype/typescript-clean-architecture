@@ -10,8 +10,6 @@
   "private": true,
   "scripts": {
     "build": "tsc",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
     "lint:check": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "format:check": "prettier -c src",
@@ -19,18 +17,17 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "eslint": "^9.22.0"
+    "execa": "^9.5.2"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
-    "@acme/vitest-config": "workspace:*",
+    "eslint": "^9.22.0",
     "@types/node": "^22",
-    "@vitest/coverage-istanbul": "^3.0.8",
     "esbuild": "^0.25.1",
-    "execa": "^9.5.2",
     "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
     "vitest": "^3.0.8"
   }
 }

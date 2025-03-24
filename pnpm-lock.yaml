@@ -12,12 +12,6 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
-      prettier:
-        specifier: ^3.2.5
-        version: 3.5.3
-      tsx:
-        specifier: 4.19.1
-        version: 4.19.1
       turbo:
         specifier: ^2.4.4
         version: 2.4.4
@@ -442,9 +436,9 @@ importers:
 
   tools/mono:
     dependencies:
-      eslint:
-        specifier: ^9.22.0
-        version: 9.22.0
+      execa:
+        specifier: ^9.5.2
+        version: 9.5.2
     devDependencies:
       '@acme/eslint-config':
         specifier: workspace:*
@@ -455,24 +449,21 @@ importers:
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
       '@types/node':
         specifier: ^22
         version: 22.13.11
-      '@vitest/coverage-istanbul':
-        specifier: ^3.0.8
-        version: 3.0.9(vitest@3.0.9)
       esbuild:
         specifier: ^0.25.1
         version: 0.25.1
-      execa:
-        specifier: ^9.5.2
-        version: 9.5.2
+      eslint:
+        specifier: ^9.22.0
+        version: 9.22.0
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
       vitest:
         specifier: ^3.0.8
         version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
