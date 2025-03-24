@@ -4,4 +4,3 @@ packages:
   - "packages/*"
   - "configs/*"
   - "tools/*"
-  - "shared"

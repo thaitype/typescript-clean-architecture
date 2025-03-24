@@ -62,8 +62,8 @@ A minimal setup that helps you get started quickly:
 │   ├── infrastructure/      # Contracts only (not implementations)
 │   └── di/                  # DI container & registry
 ├── packages/
-│   └── db-postgres/         # Postgres implementation of repositories
-└── shared/                  # Common types, utils, constants
+│   ├── db-postgres/         # Postgres implementation of repositories
+│   └── shared/                  # Common types, utils, constants
 ```
 
 ## 🔗 High-Level Dependency Diagram
