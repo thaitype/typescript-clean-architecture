@@ -3,5 +3,9 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.turbo": true,
+  }
 }
