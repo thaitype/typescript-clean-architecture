@@ -10,8 +10,6 @@
     "test:watch": "vitest watch",
     "lint:check": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
-    "format:check": "prettier -c src",
-    "format:fix": "prettier --write src",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {

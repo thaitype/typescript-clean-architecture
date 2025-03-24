@@ -9,8 +9,6 @@
     "start": "next start",
     "lint:check": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix",
-    "format:check": "mono format:check",
-    "format:fix": "prettier --write ./**/*.{ts,tsx} && prettier --write ./*.ts",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
