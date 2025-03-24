@@ -6,8 +6,6 @@
   },
   "private": true,
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest watch",
     "lint:check": "eslint ./src",
     "lint:fix": "eslint --fix ./src",
     "format:check": "prettier -c src",
