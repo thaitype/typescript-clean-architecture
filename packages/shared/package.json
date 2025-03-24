@@ -18,7 +18,6 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@acme/vitest-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
     "@vitest/coverage-istanbul": "^3.0.8",
     "eslint": "^9.22.0",
     "prettier": "^3.5.3",

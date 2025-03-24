@@ -46,9 +46,6 @@ importers:
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -80,9 +77,6 @@ importers:
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -137,12 +131,6 @@ importers:
 
   configs/config-typescript: {}
 
-  configs/prettier-config:
-    devDependencies:
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-
   configs/vitest-config:
     devDependencies:
       '@acme/typescript-config':
@@ -176,9 +164,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -216,9 +201,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -243,9 +225,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -277,9 +256,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -308,9 +284,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -378,9 +351,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -412,9 +382,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -443,9 +410,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript
@@ -458,9 +422,6 @@ importers:
       '@acme/eslint-config':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/prettier-config':
-        specifier: workspace:*
-        version: link:../../configs/prettier-config
       '@acme/typescript-config':
         specifier: workspace:*
         version: link:../../configs/config-typescript

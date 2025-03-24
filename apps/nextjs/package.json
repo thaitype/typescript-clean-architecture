@@ -9,7 +9,7 @@
     "start": "next start",
     "lint:check": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix",
-    "format:check": "prettier -c ./**/*.{ts,tsx} && prettier -c ./*.ts",
+    "format:check": "mono format:check",
     "format:fix": "prettier --write ./**/*.{ts,tsx} && prettier --write ./*.ts",
     "check-types": "tsc --noEmit"
   },
@@ -24,7 +24,6 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@acme/vitest-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
     "@types/node": "^22.13.9",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4"
