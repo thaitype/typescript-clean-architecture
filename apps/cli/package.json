@@ -26,6 +26,7 @@
     "@types/node": "^22.13.9",
     "esbuild": "^0.25.1",
     "prettier": "^3.5.3",
+    "@vitest/coverage-istanbul": "^3.0.8",
     "vitest": "^3.0.8"
   }
 }

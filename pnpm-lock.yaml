@@ -40,6 +40,9 @@ importers:
       '@types/node':
         specifier: ^22.13.9
         version: 22.13.11
+      '@vitest/coverage-istanbul':
+        specifier: ^3.0.8
+        version: 3.0.9(vitest@3.0.9)
       esbuild:
         specifier: ^0.25.1
         version: 0.25.1
