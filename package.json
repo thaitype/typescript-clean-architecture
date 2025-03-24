@@ -4,9 +4,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo lint:check check-types && npm run format",
+    "lint:check": "turbo lint:check check-types && npm run format",
     "lint:fix": "turbo lint:fix && npm run format:fix",
-    "format": "prettier -c ./**/*.{ts,tsx}",
+    "format:check": "prettier -c ./**/*.{ts,tsx}",
     "format:fix": "prettier --write ./**/*.{ts,tsx}",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",

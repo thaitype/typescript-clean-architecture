@@ -2,16 +2,15 @@ import { execa } from 'execa';
 
 let commands: string[][] = [];
 
+// prettier-ignore
 const commandMap: Record<string, string | string[]> = {
   'lint:check': 'eslint src',
   'lint:fix': 'eslint src --fix',
-  test: 'vitest run',
+  'test': 'vitest run',
   'test:watch': 'vitest watch',
-  // "format:check": "prettier -c src",
-  // "format:fix": "prettier --write src",
-  build: 'esbuild ./src/index.ts --bundle --minify --platform=node --outfile=dist/index.js',
-  dev: 'tsx watch ./src/index.ts',
-  start: 'tsx ./src/index.ts',
+  'build': 'esbuild ./src/index.ts --bundle --minify --platform=node --outfile=dist/index.js',
+  'dev': 'tsx watch ./src/index.ts',
+  'start': 'tsx ./src/index.ts',
   'check-types': 'tsc --noEmit',
 };
 
