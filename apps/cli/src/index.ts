@@ -5,12 +5,12 @@ import { add } from './add';
 
 console.log('ARGS: ', process.argv);
 
-const userController = getInjection("UserController");
+const userController = getInjection('UserController');
 
 (async () => {
   await userController.create({
-    body: { id: "u1", name: "Alice", email: "alice@example.com" },
+    body: { id: 'u1', name: 'Alice', email: 'alice@example.com' },
   });
 
-  console.log(`User: ${JSON.stringify(await userController.get({ params: { id: "u1" } }))}`);
+  console.log(`User: ${JSON.stringify(await userController.get({ params: { id: 'u1' } }))}`);
 })();

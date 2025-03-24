@@ -12,12 +12,27 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
+      '@vitest/coverage-istanbul':
+        specifier: ^3.0.8
+        version: 3.0.9(vitest@3.0.9)
+      esbuild:
+        specifier: ^0.25.1
+        version: 0.25.1
+      eslint:
+        specifier: ^9.22.0
+        version: 9.22.0
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
       turbo:
         specifier: ^2.4.4
         version: 2.4.4
       typescript:
         specifier: ^5.8.2
         version: 5.8.2
+      vitest:
+        specifier: ^3.0.8
+        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
 
   apps/cli:
     dependencies:
@@ -40,18 +55,6 @@ importers:
       '@types/node':
         specifier: ^22.13.9
         version: 22.13.11
-      '@vitest/coverage-istanbul':
-        specifier: ^3.0.8
-        version: 3.0.9(vitest@3.0.9)
-      esbuild:
-        specifier: ^0.25.1
-        version: 0.25.1
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      vitest:
-        specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
 
   apps/nextjs:
     dependencies:
@@ -453,23 +456,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/config-typescript
       '@types/node':
-        specifier: ^22
+        specifier: ^22.13.9
         version: 22.13.11
-      esbuild:
-        specifier: ^0.25.1
-        version: 0.25.1
-      eslint:
-        specifier: ^9.22.0
-        version: 9.22.0
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      vitest:
-        specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
 
   tools/template:
     devDependencies:

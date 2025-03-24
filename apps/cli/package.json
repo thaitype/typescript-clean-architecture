@@ -4,29 +4,25 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "tsx watch ./src/main.ts",
-    "start": "tsx ./src/main.ts",
-    "build": "esbuild ./src/main.ts --bundle --minify --platform=node --outfile=dist/main.js",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
+    "dev": "mono dev",
+    "start": "mono start",
+    "build": "mono build",
+    "test": "mono test",
+    "test:watch": "mono test:watch",
     "lint:check": "mono lint:check",
     "lint:fix": "mono lint:fix",
-    "format:check": "prettier -c src",
-    "format:fix": "prettier --write src",
-    "check-types": "tsc --noEmit"
+    "format:check": "mono format:check",
+    "format:fix": "mono format:fix",
+    "check-types": "mono check-types"
   },
   "dependencies": {
     "@acme/di": "workspace:*"
   },
   "devDependencies": {
+    "@acme/mono": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
-    "@acme/mono": "workspace:*",
     "@acme/typescript-config": "workspace:*",
-    "@types/node": "^22.13.9",
-    "esbuild": "^0.25.1",
-    "prettier": "^3.5.3",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "vitest": "^3.0.8"
+    "@types/node": "^22.13.9"
   }
 }

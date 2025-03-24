@@ -19,6 +19,11 @@
   },
   "devDependencies": {
     "turbo": "^2.4.4",
-    "typescript": "^5.8.2"
+    "@vitest/coverage-istanbul": "^3.0.8",
+    "typescript": "^5.8.2",
+    "eslint": "^9.22.0",
+    "esbuild": "^0.25.1",
+    "prettier": "^3.5.3",
+    "vitest": "^3.0.8"
   }
 }
