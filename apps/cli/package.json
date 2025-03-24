@@ -16,7 +16,7 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@acme/di": "workspace:*"
+
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
