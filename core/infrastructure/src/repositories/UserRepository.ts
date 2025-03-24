@@ -1,5 +1,5 @@
-import { IUserRepository } from "@acme/application/interfaces/IUserRepository";
-import { User } from "@acme/domain";
+import { IUserRepository } from '@acme/application/interfaces/IUserRepository';
+import { User } from '@acme/domain';
 
 export class UserRepository implements IUserRepository {
   private users: Map<string, User> = new Map();
