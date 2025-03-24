@@ -458,6 +458,9 @@ importers:
       '@acme/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
+      '@types/node':
+        specifier: ^22
+        version: 22.13.11
       '@vitest/coverage-istanbul':
         specifier: ^3.0.8
         version: 3.0.9(vitest@3.0.9)

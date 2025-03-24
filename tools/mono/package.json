@@ -26,6 +26,7 @@
     "@acme/prettier-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@acme/vitest-config": "workspace:*",
+    "@types/node": "^22",
     "@vitest/coverage-istanbul": "^3.0.8",
     "esbuild": "^0.25.1",
     "execa": "^9.5.2",
