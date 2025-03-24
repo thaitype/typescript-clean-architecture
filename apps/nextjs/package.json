@@ -20,16 +20,13 @@
     "@acme/database-drizzle": "workspace:*"
   },
   "devDependencies": {
+    "@acme/mono": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@acme/vitest-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
     "@types/node": "^22.13.9",
     "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "vitest": "^3.0.8"
+    "@types/react-dom": "19.0.4"
   }
 }
