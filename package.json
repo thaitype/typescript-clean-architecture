@@ -10,7 +10,7 @@
     "test:coverage-report": "turbo run view-report"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "name": "typescript-clean-architecture",
   "packageManager": "pnpm@10.5.2",
