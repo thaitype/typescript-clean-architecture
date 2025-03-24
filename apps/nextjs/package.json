@@ -9,7 +9,7 @@
     "start": "next start",
     "lint:check": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix",
-    "check-types": "tsc --noEmit"
+    "check-types": "mono check-types"
   },
   "dependencies": {
     "next": "^15.2.1",
