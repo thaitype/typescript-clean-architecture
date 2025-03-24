@@ -1,11 +1,11 @@
 {
-  "name": "@acme/scripts",
+  "name": "@acme/mono",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "bin": {
-    "acme": "dist/index.js"
+    "mono": "dist/index.js"
   },
   "private": true,
   "scripts": {

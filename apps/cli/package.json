@@ -9,8 +9,8 @@
     "build": "esbuild ./src/main.ts --bundle --minify --platform=node --outfile=dist/main.js",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "lint:check": "acme lint:check",
-    "lint:fix": "acme lint:fix",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
     "format:check": "prettier -c src",
     "format:fix": "prettier --write src",
     "check-types": "tsc --noEmit"
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
     "@acme/prettier-config": "workspace:*",
-    "@acme/scripts": "workspace:*",
+    "@acme/mono": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@types/node": "^22.13.9",
     "esbuild": "^0.25.1",
