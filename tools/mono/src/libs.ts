@@ -4,6 +4,7 @@ import path from 'node:path';
 
 export type MonoScripts = Record<string, string | string[]>;
 
+// Read "Pure ESM package": https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
 const filename = fileURLToPath(import.meta.url); // ESM style like __filename in CommonJS
 const dirname = path.dirname(filename); // ESM style like  __dirname in CommonJS
 

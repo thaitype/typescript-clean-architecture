@@ -13,7 +13,6 @@
     "check-types": "mono check-types"
   },
   "dependencies": {
-    "@acme/mono": "workspace:*",
     "@acme/domain": "workspace:*",
     "@acme/application": "workspace:*",
     "@acme/infrastructure": "workspace:*",
