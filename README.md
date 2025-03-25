@@ -74,18 +74,19 @@ This project follows a modular monorepo layout:
 
 ## 📦 Template Generator
 
-To get started, copy and rename the `tools/template` package:
+To create a new package, copy and rename the `tools/template` folder:
 
 ```bash
 cp -r tools/template core/new-package
 ```
 
 This includes:
+- Preconfigured build/dev/test scripts
 - Standard tooling via `mono`
 - `tsconfig`, `eslint`, `vitest` setup
-- Example `lib` and test file
+- Minimal boilerplate with `lib` + test examples
 
-Just update the package name and start building!
+Just update the package name in `package.json` and start coding!
 
 ---
 
@@ -93,12 +94,12 @@ Just update the package name and start building!
 
 ### 🧩 Centralized Toolchain via `tools/mono`
 
-We build a custom toolchain named `mono` that we can easily manage to control the build process.
+We built a custom toolchain named `mono` to easily manage and control the build process across all packages.
 
-Instead of installing build tools (like esbuild, vitest, eslint) in every package, we centralize them via:
+Instead of installing build tools like `esbuild`, `vitest`, and `eslint` in every package, we centralize them via:
 
 - `tools/mono`: Unified CLI for commands like `dev`, `test`, `build`
-- `configs/*`: Shared config presets (eslint, tsconfig, vitest)
+- `configs/*`: Shared config presets for linting, TS, and testing
 
 Example `mono` script:
 ```ts
@@ -116,7 +117,8 @@ const scripts: MonoScripts = {
 
 ### 🧪 How packages use `mono`
 
-Each package delegates scripts to `mono`:
+Each package reuses the `mono` CLI by mapping local scripts:
+
 ```json
 {
   "scripts": {
@@ -139,6 +141,9 @@ Each package delegates scripts to `mono`:
 ```
 
 ### 🛠 Root `package.json` dependencies
+
+Tools are only installed once at the root:
+
 ```json
 {
   "devDependencies": {
@@ -192,6 +197,8 @@ I --> F
 ## 🧠 Dependency Injection
 
 Uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus), a fast, lightweight container with no `reflect-metadata` needed. You resolve anything with:
+
+To resolve any service:
 
 ```ts
 import { getInjection } from "@acme/di";
