@@ -8,24 +8,18 @@
   "scripts": {
     "db:seed": "tsx scripts/seed.ts",
     "db:migrate": "tsx scripts/migrate.ts",
-    "lint:check": "eslint ./src",
-    "lint:fix": "eslint --fix ./src",
-    "format:check": "prettier -c src",
-    "format:fix": "prettier --write src",
-    "check-types": "tsc --noEmit"
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "@acme/database-drizzle": "workspace:*"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/typescript-config": "workspace:*",
-    "@acme/vitest-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "vitest": "^3.0.8"
+    "@acme/mono": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*"
   }
 }

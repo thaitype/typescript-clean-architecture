@@ -9,9 +9,7 @@
     "start": "next start",
     "lint:check": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix",
-    "format:check": "prettier -c ./**/*.{ts,tsx} && prettier -c ./*.ts",
-    "format:fix": "prettier --write ./**/*.{ts,tsx} && prettier --write ./*.ts",
-    "check-types": "tsc --noEmit"
+    "check-types": "mono check-types"
   },
   "dependencies": {
     "next": "^15.2.1",
@@ -20,16 +18,12 @@
     "@acme/database-drizzle": "workspace:*"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/typescript-config": "workspace:*",
-    "@acme/vitest-config": "workspace:*",
-    "@acme/prettier-config": "workspace:*",
+    "@acme/mono": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
     "@types/node": "^22.13.9",
     "@types/react": "19.0.10",
-    "@types/react-dom": "19.0.4",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "vitest": "^3.0.8"
+    "@types/react-dom": "19.0.4"
   }
 }

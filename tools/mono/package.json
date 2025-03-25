@@ -1,0 +1,25 @@
+{
+  "name": "@acme/mono",
+  "type": "module",
+  "exports": {
+    ".": "./src/cli.ts"
+  },
+  "bin": {
+    "mono": "dist/cli.js"
+  },
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "execa": "^9.5.2"
+  },
+  "devDependencies": {
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@types/node": "^22.13.9"
+  }
+}

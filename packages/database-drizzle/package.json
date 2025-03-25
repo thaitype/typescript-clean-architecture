@@ -5,7 +5,11 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types",
     "db:studio": "drizzle-kit studio",
     "generate": "drizzle-kit generate"
   },
@@ -16,14 +20,11 @@
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/typescript-config": "workspace:*",
+    "@acme/mono": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
     "@types/node": "^20.11.24",
-    "drizzle-kit": "^0.30.5",
-    "eslint": "^9.21.0",
-    "rimraf": "^5.0.5",
-    "tsup": "^8.0.2",
-    "tsx": "4.19.1",
-    "typescript": "5.8.2"
+    "drizzle-kit": "^0.30.5"
   }
 }

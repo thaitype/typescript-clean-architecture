@@ -1,14 +1,14 @@
-import fs from "fs/promises";
-import path from "path";
-import { glob } from "glob";
+import fs from 'fs/promises';
+import path from 'path';
+import { glob } from 'glob';
 
 async function collectCoverageFiles() {
   try {
     // Define the patterns to search
-    const patterns = ["../../apps/*", "../../packages/*" , "../../core/*" , "../../shared"];
+    const patterns = ['../../apps/*', '../../packages/*', '../../core/*', '../../shared'];
 
     // Define the destination directory (you can change this as needed)
-    const destinationDir = path.join(process.cwd(), "coverage/raw");
+    const destinationDir = path.join(process.cwd(), 'coverage/raw');
 
     // Create the destination directory if it doesn't exist
     await fs.mkdir(destinationDir, { recursive: true });
@@ -28,7 +28,7 @@ async function collectCoverageFiles() {
 
         if (stats.isDirectory()) {
           allDirectories.push(match);
-          const coverageFilePath = path.join(match, "coverage.json");
+          const coverageFilePath = path.join(match, 'coverage.json');
 
           // Check if coverage.json exists in this directory
           try {
@@ -39,10 +39,7 @@ async function collectCoverageFiles() {
 
             // Copy it to the destination with a unique name
             const directoryName = path.basename(match);
-            const destinationFile = path.join(
-              destinationDir,
-              `${directoryName}.json`
-            );
+            const destinationFile = path.join(destinationDir, `${directoryName}.json`);
 
             await fs.copyFile(coverageFilePath, destinationFile);
           } catch (err) {
@@ -53,19 +50,15 @@ async function collectCoverageFiles() {
     }
 
     // Create clean patterns for display (without any "../" prefixes)
-    const replaceDotPatterns = (str: string) => str.replace(/\.\.\//g, "");
+    const replaceDotPatterns = (str: string) => str.replace(/\.\.\//g, '');
 
     if (directoriesWithCoverage.length > 0) {
-      console.log(
-        `Found coverage.json in: ${directoriesWithCoverage
-          .map(replaceDotPatterns)
-          .join(", ")}`
-      );
+      console.log(`Found coverage.json in: ${directoriesWithCoverage.map(replaceDotPatterns).join(', ')}`);
     }
 
     console.log(`Coverage collected into: ${path.join(process.cwd())}`);
   } catch (error) {
-    console.error("Error collecting coverage files:", error);
+    console.error('Error collecting coverage files:', error);
   }
 }
 

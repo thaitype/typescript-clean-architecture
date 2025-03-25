@@ -1,5 +1,5 @@
-import { User } from "@acme/domain";
-import { IUserRepository } from "../interfaces/IUserRepository";
+import { User } from '@acme/domain';
+import { IUserRepository } from '../interfaces/IUserRepository';
 
 export class UserUseCase {
   constructor(private userRepo: IUserRepository) {}

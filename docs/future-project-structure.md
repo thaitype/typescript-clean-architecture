@@ -41,15 +41,14 @@ Once your project grows, the structure expands like this:
 │   ├── cache-redis/         # Redis cache adapter (for ICacheService)
 │   ├── mq-rabbitmq/         # RabbitMQ adapter (for IMessageQueueService)
 │   ├── email-sendgrid/      # SendGrid adapter
+│   ├── shared/              # Cross-cutting shared utils
 │   └── logger-pino/         # Pino logger service
 │
-├── shared/
-│   ├── types/
-│   ├── utils/
-│   ├── config/
-│   └── constants/
+├── tools/                  # Toolchain scripts and helpers
+│   ├── db/                 # DB migration + seed tooling
+│   ├── mono/               # CLI wrapper for build/test/lint/dev
+│   └── template/           # Reusable project template package
 │
-├── tools/                   # Scripts, CLI helpers
 └── design-system/           # (Optional) UI components
 ```
 
