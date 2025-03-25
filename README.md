@@ -227,7 +227,9 @@ I --> F
 
 ## 🧠 Dependency Injection
 
-Uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus), a fast, lightweight container with no `reflect-metadata` needed. You resolve anything with:
+This template uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus) — a simple, metadata-free IoC container for TypeScript that works across runtimes (Node, Edge, etc). 
+
+However, this project use a forked version of `ioctopus` when the original package is fully support type-safety, this project will switch back to the original package, see [issue#3](https://github.com/thaitype/ioctopus/issues/3)
 
 To resolve any service:
 
