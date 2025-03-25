@@ -20,9 +20,6 @@
     "@acme/config-eslint": "workspace:*",
     "@acme/config-typescript": "workspace:*",
     "@acme/config-vitest": "workspace:*",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "vitest": "^3.0.8"
+    "@vitest/coverage-istanbul": "^3.0.8"
   }
 }

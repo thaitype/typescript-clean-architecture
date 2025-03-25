@@ -260,15 +260,6 @@ importers:
       '@vitest/coverage-istanbul':
         specifier: ^3.0.8
         version: 3.0.9(vitest@3.0.9)
-      eslint:
-        specifier: ^9.22.0
-        version: 9.22.0
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      vitest:
-        specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   packages/database-drizzle:
     dependencies:
@@ -340,18 +331,6 @@ importers:
       '@acme/mono':
         specifier: workspace:*
         version: link:../mono
-      '@vitest/coverage-istanbul':
-        specifier: ^3.0.8
-        version: 3.0.9(vitest@3.0.9)
-      eslint:
-        specifier: ^9.22.0
-        version: 9.22.0
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      vitest:
-        specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   tools/mono:
     dependencies:
