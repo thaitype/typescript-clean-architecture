@@ -35,151 +35,134 @@ Clean Architecture helps you:
 
 ---
 
-### Core Principles:
+## 🔰 Template Project Overview
 
-| Layer                 | Responsibility                                                                 |
-|----------------------|----------------------------------------------------------------------------------|
-| **Domain**           | Business entities, rules, invariants (pure, stable)                             |
-| **Application**      | Use cases, business workflows, interfaces for repositories/services             |
-| **Interface Adapters** | Controllers, presenters, mappers, validators (connect input/output to use cases) |
-| **Infrastructure**   | Concrete implementations of services, repositories (DB, APIs, email, etc.)      |
-| **DI (Dependency Injection)** | Wiring dependencies to keep layers decoupled                                |
-
----
-
-## 🚀 Starter Project Structure
-
-A minimal setup that helps you get started quickly:
+This project follows a modular monorepo layout:
 
 ```bash
 .
-├── apps/
-│   └── web/                  # App entry point (e.g., Next.js, Express)
-├── core/
-│   ├── domain/              # Business entities
-│   ├── application/         # Use cases and interfaces
-│   ├── interface-adapters/  # Controllers, mappers, validators
-│   ├── infrastructure/      # Contracts only (not implementations)
-│   └── di/                  # DI container & registry
-├── packages/
-│   ├── db-postgres/         # Postgres implementation of repositories
-│   └── shared/                  # Common types, utils, constants
-```
-
-## 🔗 High-Level Dependency Diagram
-
-**Arrow direction (→)** means "depends on" or "uses" — the arrow always points from the **dependent** to the **dependency**.
-
-### 🔍 Example Interpretation:
-- `application → domain`  
-  ↳ e.g., `CreateUserUseCase` uses `User` entity → `import { User } from "@acme/domain"`
-
-- `interface-adapters → application`  
-  ↳ e.g., `UserController` calls `CreateUserUseCase` → `import { CreateUserUseCase } from "@acme/application"`
-
-- `infrastructure → application`  
-  ↳ e.g., `UserRepository` implements `IUserRepository` → `import { IUserRepository } from "@acme/application"`
-
-- `apps/web → di`  
-  ↳ e.g., web app resolves controller via DI → `const userController = resolve("UserController")`
-
-- `shared → all`  
-  ↳ e.g., shared `utils`, `types`, or `constants` are imported across layers
-
-For example:
-- `application → domain` = Application layer depends on domain models
-- `interface-adapters → application` = Controllers use application use cases
-- `infrastructure → application` = Implementations depend on interfaces defined in application
-- `apps/web → di` = App depends on the DI wiring
-
-```mermaid
-graph TD
-
-%% Core layers
-A[domain] --> B[application]
-B --> C[interface-adapters]
-B --> D[infrastructure]
-C --> E[di]
-D --> E
-
-%% App layer
-E --> F[apps/web]
-
-%% External packages
-H[packages/db-postgres] --> D
-
-%% Shared
-J[shared] --> B
-J --> C
-J --> D
-J --> E
-J --> F
-
-style A fill:#f9f,stroke:#333,stroke-width:2
-style B fill:#bbf,stroke:#333,stroke-width:2
-style C fill:#cfc,stroke:#333,stroke-width:2
-style D fill:#fcc,stroke:#333,stroke-width:2
-style E fill:#ffc,stroke:#333,stroke-width:2
-style F fill:#eee,stroke:#333,stroke-width:2
-style H fill:#ddd,stroke:#999,stroke-dasharray: 5
-style J fill:#eee,stroke:#666,stroke-dasharray: 3
+├── apps/                    # Applications (UI, CLI, etc)
+│   ├── nextjs/              # Next.js frontend (App Router)
+│   └── cli/                 # CLI tools (e.g., for batch scripts)
+│
+├── core/                   # Clean architecture layers
+│   ├── domain/             # Business entities, value objects
+│   ├── application/        # Use cases, interfaces
+│   ├── interface-adapters/ # Controllers, adapters, presenters
+│   ├── infrastructure/     # Implementations (e.g., repositories)
+│   └── di/                 # Dependency injection setup
+│
+├── packages/               # Modular services
+│   ├── database-drizzle/   # DB setup with Drizzle ORM
+│   └── shared/             # Cross-cutting shared utils
+│
+├── configs/                # Centralized configuration presets
+│   ├── config-eslint/      # Shared ESLint config
+│   ├── config-typescript/  # Shared TSConfig presets
+│   └── config-vitest/      # Shared Vitest setup
+│
+├── tools/                  # Toolchain scripts and helpers
+│   ├── db/                 # DB migration + seed tooling
+│   ├── mono/               # CLI wrapper for build/test/lint/dev
+│   └── template/           # Reusable project template package
+│
+├── turbo.json              # Task orchestration config
+└── pnpm-workspace.yaml     # Defines workspace structure
 ```
 
 ---
 
-## 🌱 Future Project Structure (Scalable & Modular)
+## 📦 Template Generator
 
-Once your project grows, the structure expands like this:
+To get started, copy and rename the `tools/template` package:
 
 ```bash
-.
-├── apps/
-│   ├── web/                 # Web/API app
-│   └── cli/                 # CLI commands (optional)
-│
-├── core/
-│   ├── domain/
-│   │   ├── entities/
-│   │   ├── value-objects/
-│   │   └── errors/
-│   ├── application/
-│   │   ├── use-cases/
-│   │   │   ├── commands/
-│   │   │   └── queries/
-│   │   └── interfaces/
-│   ├── interface-adapters/
-│   │   ├── controllers/
-│   │   ├── graphql/             # GraphQL resolvers
-│   │   ├── cli/                 # CLI entry points
-│   │   ├── webhooks/            # Webhook handlers (e.g., Stripe)
-│   │   ├── events/              # Event-driven adapters (e.g., RabbitMQ)
-│   │   ├── middlewares/         # HTTP middlewares
-│   │   ├── presenters/          # View-friendly formatters (DTOs)
-│   │   └── validators/          # Zod/Yup validators
-│   ├── infrastructure/
-│   │   ├── gateways/
-│   │   └── persistence/
-│   └── di/
-│       ├── container.ts
-│       ├── ServiceRegistry.ts
-│       └── resolve.ts
-│
-├── packages/
-│   ├── db-mongodb/          # MongoDB implementation
-│   ├── db-postgres/         # PostgreSQL implementation
-│   ├── cache-redis/         # Redis cache adapter (for ICacheService)
-│   ├── mq-rabbitmq/         # RabbitMQ adapter (for IMessageQueueService)
-│   ├── email-sendgrid/      # SendGrid adapter
-│   └── logger-pino/         # Pino logger service
-│
-├── shared/
-│   ├── types/
-│   ├── utils/
-│   ├── config/
-│   └── constants/
-│
-├── tools/                   # Scripts, CLI helpers
-└── design-system/           # (Optional) UI components
+cp -r tools/template core/new-package
+```
+
+This includes:
+- Standard tooling via `mono`
+- `tsconfig`, `eslint`, `vitest` setup
+- Example `lib` and test file
+
+Just update the package name and start building!
+
+---
+
+## 🔧 Build Tooling with Turborepo + Mono
+
+### 🧩 Centralized Toolchain via `tools/mono`
+
+We build a custom toolchain named `mono` that we can easily manage to control the build process.
+
+Instead of installing build tools (like esbuild, vitest, eslint) in every package, we centralize them via:
+
+- `tools/mono`: Unified CLI for commands like `dev`, `test`, `build`
+- `configs/*`: Shared config presets (eslint, tsconfig, vitest)
+
+Example `mono` script:
+```ts
+const scripts: MonoScripts = {
+  'lint:check': 'eslint src',
+  'lint:fix': 'eslint src --fix',
+  'test': 'vitest run',
+  'test:watch': 'vitest watch',
+  'build': 'esbuild ./src/index.ts --bundle --minify --platform=node --outfile=dist/index.js',
+  'dev': 'tsx watch ./src/index.ts',
+  'start': 'tsx ./src/index.ts',
+  'check-types': 'tsc --noEmit',
+};
+```
+
+### 🧪 How packages use `mono`
+
+Each package delegates scripts to `mono`:
+```json
+{
+  "scripts": {
+    "dev": "mono dev",
+    "start": "mono start",
+    "build": "mono build",
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
+  },
+  "devDependencies": {
+    "@acme/mono": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*"
+  }
+}
+```
+
+### 🛠 Root `package.json` dependencies
+```json
+{
+  "devDependencies": {
+    "turbo": "^2.4.4",
+    "@vitest/coverage-istanbul": "^3.0.9",
+    "typescript": "^5.8.2",
+    "eslint": "^9.22.0",
+    "esbuild": "^0.25.1",
+    "prettier": "^3.5.3",
+    "vitest": "^3.0.9"
+  }
+}
+```
+
+### 🧠 Workspace definition
+
+```yaml
+# pnpm-workspace.yaml
+packages:
+  - "apps/*"
+  - "core/*"
+  - "packages/*"
+  - "configs/*"
+  - "tools/*"
 ```
 
 ---
@@ -189,122 +172,32 @@ Once your project grows, the structure expands like this:
 ```mermaid
 graph TD
 
-%% Core layers
 A[domain] --> B[application]
 B --> C[interface-adapters]
 B --> D[infrastructure]
 C --> E[di]
 D --> E
-
-%% App layer
-E --> F[apps/web]
-
-%% External packages
-G[packages/db-mongodb] --> D
-H[packages/db-postgres] --> D
-I[packages/email-sendgrid] --> D
-X[packages/cache-redis] --> D
-Y[packages/mq-rabbitmq] --> D
-
-%% Shared
-J[shared] --> B
-J --> C
-J --> D
-J --> E
-J --> F
-
-style A fill:#f9f,stroke:#333,stroke-width:2
-style B fill:#bbf,stroke:#333,stroke-width:2
-style C fill:#cfc,stroke:#333,stroke-width:2
-style D fill:#fcc,stroke:#333,stroke-width:2
-style E fill:#ffc,stroke:#333,stroke-width:2
-style F fill:#eee,stroke:#333,stroke-width:2
-style G fill:#ddd,stroke:#999,stroke-dasharray: 5
-style H fill:#ddd,stroke:#999,stroke-dasharray: 5
-style I fill:#ddd,stroke:#999,stroke-dasharray: 5
-style X fill:#ddd,stroke:#999,stroke-dasharray: 5
-style Y fill:#ddd,stroke:#999,stroke-dasharray: 5
-style J fill:#eee,stroke:#666,stroke-dasharray: 3
+E --> F[apps/nextjs]
+E --> G[apps/cli]
+H[packages/database-drizzle] --> D
+I[packages/shared] --> B
+I --> C
+I --> D
+I --> E
+I --> F
 ```
 
 ---
 
 ## 🧠 Dependency Injection
 
-This template uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus) — a simple, metadata-free IoC container for TypeScript that works across runtimes (Node, Edge, etc). 
-
-However, this project use a forked version of `ioctopus` when the original package is fully support type-safety, this project will switch back to the original package, see [issue#3](https://github.com/thaitype/ioctopus/issues/3)
-
----
-
-## 🧪 Example Usage
+Uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus), a fast, lightweight container with no `reflect-metadata` needed. You resolve anything with:
 
 ```ts
-// apps/web/index.ts
-import { resolve } from "@acme/di";
-
-const userController = resolve("UserController");
-await userController.create({
-  body: { id: "u1", name: "Alice" },
-});
+import { getInjection } from "@acme/di";
+const userController = getInjection("UserController");
 ```
-
----
-
-## 🧪 Testing
-
-Because each layer is isolated, you can easily test use cases like this:
-
-```ts
-import { CreateUserUseCase } from "@acme/application";
-
-const mockRepo = {
-  create: vi.fn(),
-};
-
-const useCase = new CreateUserUseCase(mockRepo);
-await useCase.execute({ id: "u1", name: "Alice", email: "test@example.com" });
-```
-
----
-
-## 📚 Glossary
-
-| Term              | Meaning                                                                 |
-|-------------------|-------------------------------------------------------------------------|
-| **Use Case**       | One unit of business logic (e.g. CreateUser)                            |
-| **Controller**     | Handles incoming requests and calls use cases                          |
-| **Presenter**      | Formats output for UI or external clients                              |
-| **Gateway**        | Interface to external systems (e.g. DB, Email, Redis)                  |
-| **Interface Adapter** | Layer that translates between external input/output and core logic     |
-| **Repository**     | Contract for accessing data, implemented in infrastructure              |
-
----
-
-## 🛠 Getting Started
-
-1. Clone the repo
-2. Run `pnpm install`
-3. Start hacking in `/core/`
 
 ---
 
 Happy coding! ✨ Let your architecture evolve, not collapse. 🏗️
-
----
-
-## Q&A
-
-### 🆚 Shared vs Domain
-
-### `shared/`
-- Generic, reusable code: utilities, types, config loaders, constants
-- Not tied to any business logic
-- Can be used by any layer **except** `domain`
-- Example: `formatDate()`, `PaginatedResult<T>`, `Zod` validators
-
-### `domain/`
-- Contains business entities, rules, and core logic
-- No external dependencies — must be 100% pure and stable
-- Should not import from `shared` (to preserve isolation)
-- Example: `User`, `Order`, `EmailAddress`, domain-specific errors
