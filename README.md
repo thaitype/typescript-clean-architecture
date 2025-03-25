@@ -239,3 +239,17 @@ const userController = getInjection("UserController");
 ---
 
 Happy coding! ✨ Let your architecture evolve, not collapse. 🏗️
+
+---
+
+## Read More
+- Basic Concept of Monorepo by Turborepo: <https://turbo.build/repo/docs/guides/tools/typescript>
+- Clean Architecture: <https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html>
+
+## References
+
+Some codes template bring the idea from those repositories:
+- Drizzle Turbo Repo Template: <https://github.com/htsh-tsyk/turbo-drizzle>
+- Next.js Clean Architecture: <https://github.com/nikolovlazar/nextjs-clean-architecture>
+- Next.js 15 on turborepo template: <https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/basic>
+- Vitest on Turbo Repo: <https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/with-vitest>
