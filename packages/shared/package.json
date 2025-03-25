@@ -6,19 +6,16 @@
   },
   "private": true,
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "lint:check": "eslint ./src",
-    "lint:fix": "eslint --fix ./src",
-    "check-types": "tsc --noEmit"
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
   },
   "devDependencies": {
+    "@acme/mono": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
-    "@acme/vitest-config": "workspace:*",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3",
-    "vitest": "^3.0.8"
+    "@acme/vitest-config": "workspace:*"
   }
 }

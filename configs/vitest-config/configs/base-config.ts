@@ -3,6 +3,7 @@ import path from 'node:path';
 
 export const baseConfig = defineConfig({
   test: {
+    passWithNoTests: true,
     coverage: {
       provider: 'istanbul',
       reporter: [

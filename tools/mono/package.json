@@ -2,10 +2,10 @@
   "name": "@acme/mono",
   "type": "module",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/cli.ts"
   },
   "bin": {
-    "mono": "dist/index.js"
+    "mono": "dist/cli.js"
   },
   "private": true,
   "scripts": {

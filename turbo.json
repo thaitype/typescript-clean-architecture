@@ -28,14 +28,14 @@
       "cache": false
     },
     "test": {
-      "dependsOn": ["@acme/vitest-config#build", "^test"]
+      "dependsOn": ["build-tools", "^test"]
     },
     "test:watch": {
       "cache": false,
       "persistent": true
     },
     "lint:check": {
-      "dependsOn": ["@acme/vitest-config#build", "^lint:check"]
+      "dependsOn": ["build-tools", "^lint:check"]
     },
     "lint:fix": {},
     "format:check": {
@@ -43,7 +43,10 @@
     },
     "format:fix": {},
     "check-types": {
-      "dependsOn": ["@acme/vitest-config#build", "^check-types"]
+      "dependsOn": ["build-tools", "^check-types"]
+    },
+    "build-tools": {
+      "dependsOn": ["@acme/vitest-config#build" , "@acme/mono#build"]
     },
     "dev": {
       "cache": false,

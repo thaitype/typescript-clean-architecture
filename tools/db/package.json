@@ -8,15 +8,16 @@
   "scripts": {
     "db:seed": "tsx scripts/seed.ts",
     "db:migrate": "tsx scripts/migrate.ts",
-    "lint:check": "eslint ./src",
-    "lint:fix": "eslint --fix ./src",
-    "check-types": "tsc --noEmit"
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
     "@acme/database-drizzle": "workspace:*"
   },
   "devDependencies": {
+    "@acme/mono": "workspace:*",
     "@acme/eslint-config": "workspace:*",
     "@acme/typescript-config": "workspace:*",
     "@acme/vitest-config": "workspace:*",

@@ -1,8 +1,8 @@
-import { execa } from "execa";
-import {fileURLToPath} from 'node:url';
+import { execa } from 'execa';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-export type MonoScripts = Record<string, string | string[]>; 
+export type MonoScripts = Record<string, string | string[]>;
 
 const filename = fileURLToPath(import.meta.url); // ESM style like __filename in CommonJS
 const dirname = path.dirname(filename); // ESM style like  __dirname in CommonJS
@@ -11,16 +11,19 @@ const rootFile = path.resolve(dirname, '..');
 const nodeModules = path.resolve(rootFile, 'node_modules');
 const binDir = path.resolve(nodeModules, '.bin');
 
-export async function runCommand(commands: string[], options?: {
-  /**
-   * Whether to prefer local binaries over global ones
-   * @default true
-   */
-  preferLocal?: boolean;
-}) {
+export async function runCommand(
+  commands: string[],
+  options?: {
+    /**
+     * Whether to prefer local binaries over global ones
+     * @default true
+     */
+    preferLocal?: boolean;
+  }
+) {
   const preferLocal = options?.preferLocal ?? true;
   const execaOptions = preferLocal ? { preferLocal: true, localDir: binDir } : {};
-  const subprocess = execa({ env: { FORCE_COLOR: 'true' }, stdout: 'pipe', ...execaOptions  })`${[...commands]}`;
+  const subprocess = execa({ env: { FORCE_COLOR: 'true' }, stdout: 'pipe', ...execaOptions })`${[...commands]}`;
   subprocess.stdout.pipe(process.stdout);
   subprocess.stderr.pipe(process.stderr);
   await subprocess.catch(error => {
@@ -40,7 +43,7 @@ export function processArgs(arg: string, commandMap: Record<string, string | str
     process.exit(1);
   }
 
-  return typeof commandMap[arg] === "string"
-    ? [commandMap[arg].split(" ")]
-    : commandMap[arg].map((command) => command.split(" "));
+  return typeof commandMap[arg] === 'string'
+    ? [commandMap[arg].split(' ')]
+    : commandMap[arg].map(command => command.split(' '));
 }
