@@ -6,8 +6,8 @@
     "dev": "turbo run dev",
     "lint:check": "turbo lint:check check-types && npm run format",
     "lint:fix": "turbo lint:fix && npm run format:fix",
-    "format": "prettier --check ./**/*.{ts,tsx}",
-    "format:fix": "prettier --write ./**/*.{ts,tsx}",
+    "format": "prettier --check ./**/*.{ts,tsx,js}",
+    "format:fix": "prettier --write ./**/*.{ts,tsx,js}",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch",
     "test:coverage-report": "turbo run view-report"
@@ -21,12 +21,12 @@
   },
   "devDependencies": {
     "turbo": "^2.4.4",
-    "@vitest/coverage-istanbul": "^3.0.8",
+    "@vitest/coverage-istanbul": "^3.0.9",
     "typescript": "^5.8.2",
     "eslint": "^9.22.0",
     "esbuild": "^0.25.1",
     "prettier": "^3.5.3",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.9"
   },
   "prettier": {
     "trailingComma": "es5",

@@ -1,5 +1,5 @@
 {
-  "name": "@acme/eslint-config",
+  "name": "@acme/config-eslint",
   "version": "0.0.0",
   "type": "module",
   "private": true,

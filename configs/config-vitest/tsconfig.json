@@ -1,5 +1,5 @@
 {
-  "extends": ["@acme/typescript-config/base.json"],
+  "extends": ["@acme/config-typescript/base.json"],
   "compilerOptions": {
     "outDir": "dist",
   },

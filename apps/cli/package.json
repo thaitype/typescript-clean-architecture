@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@acme/mono": "workspace:*",
-    "@acme/eslint-config": "workspace:*",
-    "@acme/typescript-config": "workspace:*",
-    "@acme/vitest-config": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
     "@types/node": "^22.13.9"
   }
 }

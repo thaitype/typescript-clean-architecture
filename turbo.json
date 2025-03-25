@@ -46,7 +46,7 @@
       "dependsOn": ["build-tools", "^check-types"]
     },
     "build-tools": {
-      "dependsOn": ["@acme/vitest-config#build" , "@acme/mono#build"]
+      "dependsOn": ["@acme/config-vitest#build" , "@acme/mono#build"]
     },
     "dev": {
       "cache": false,

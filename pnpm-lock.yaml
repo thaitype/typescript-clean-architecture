@@ -13,7 +13,7 @@ importers:
         version: 2.1.1
     devDependencies:
       '@vitest/coverage-istanbul':
-        specifier: ^3.0.8
+        specifier: ^3.0.9
         version: 3.0.9(vitest@3.0.9)
       esbuild:
         specifier: ^0.25.1
@@ -31,8 +31,8 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
       vitest:
-        specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
+        specifier: ^3.0.9
+        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   apps/cli:
     dependencies:
@@ -40,18 +40,18 @@ importers:
         specifier: workspace:*
         version: link:../../core/di
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
       '@types/node':
         specifier: ^22.13.9
         version: 22.13.11
@@ -71,18 +71,18 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
       '@types/node':
         specifier: ^22.13.9
         version: 22.13.11
@@ -131,17 +131,17 @@ importers:
 
   configs/config-typescript: {}
 
-  configs/vitest-config:
+  configs/config-vitest:
     devDependencies:
-      '@acme/typescript-config':
+      '@acme/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
       '@vitest/coverage-istanbul':
-        specifier: ^3.0.8
+        specifier: ^3.0.9
         version: 3.0.9(vitest@3.0.9)
       '@vitest/ui':
-        specifier: 3.0.8
-        version: 3.0.8(vitest@3.0.9)
+        specifier: 3.0.9
+        version: 3.0.9(vitest@3.0.9)
       glob:
         specifier: ^11.0.1
         version: 11.0.1
@@ -152,8 +152,8 @@ importers:
         specifier: ^17.1.0
         version: 17.1.0
       vitest:
-        specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
+        specifier: ^3.0.9
+        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   core/application:
     dependencies:
@@ -161,18 +161,18 @@ importers:
         specifier: workspace:*
         version: link:../domain
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
 
   core/di:
     dependencies:
@@ -188,34 +188,34 @@ importers:
       '@acme/interface-adapters':
         specifier: workspace:*
         version: link:../interface-adapters
+    devDependencies:
+      '@acme/config-eslint':
+        specifier: workspace:*
+        version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-    devDependencies:
-      '@acme/eslint-config':
-        specifier: workspace:*
-        version: link:../../configs/config-eslint
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
 
   core/domain:
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
 
   core/infrastructure:
     dependencies:
@@ -226,18 +226,18 @@ importers:
         specifier: workspace:*
         version: link:../domain
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
 
   core/interface-adapters:
     dependencies:
@@ -245,18 +245,18 @@ importers:
         specifier: workspace:*
         version: link:../application
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
       '@vitest/coverage-istanbul':
         specifier: ^3.0.8
         version: 3.0.9(vitest@3.0.9)
@@ -268,7 +268,7 @@ importers:
         version: 3.5.3
       vitest:
         specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
+        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   packages/database-drizzle:
     dependencies:
@@ -285,18 +285,18 @@ importers:
         specifier: ^3.4.5
         version: 3.4.5
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
       '@types/node':
         specifier: ^20.11.24
         version: 20.17.24
@@ -306,18 +306,18 @@ importers:
 
   packages/shared:
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../../tools/mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
 
   tools/db:
     dependencies:
@@ -328,18 +328,18 @@ importers:
         specifier: ^16.4.7
         version: 16.4.7
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
       '@vitest/coverage-istanbul':
         specifier: ^3.0.8
         version: 3.0.9(vitest@3.0.9)
@@ -351,7 +351,7 @@ importers:
         version: 3.5.3
       vitest:
         specifier: ^3.0.8
-        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
+        version: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   tools/mono:
     dependencies:
@@ -359,10 +359,10 @@ importers:
         specifier: ^9.5.2
         version: 9.5.2
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
-      '@acme/typescript-config':
+      '@acme/config-typescript':
         specifier: workspace:*
         version: link:../../configs/config-typescript
       '@types/node':
@@ -371,18 +371,18 @@ importers:
 
   tools/template:
     devDependencies:
-      '@acme/eslint-config':
+      '@acme/config-eslint':
         specifier: workspace:*
         version: link:../../configs/config-eslint
+      '@acme/config-typescript':
+        specifier: workspace:*
+        version: link:../../configs/config-typescript
+      '@acme/config-vitest':
+        specifier: workspace:*
+        version: link:../../configs/config-vitest
       '@acme/mono':
         specifier: workspace:*
         version: link:../mono
-      '@acme/typescript-config':
-        specifier: workspace:*
-        version: link:../../configs/config-typescript
-      '@acme/vitest-config':
-        specifier: workspace:*
-        version: link:../../configs/vitest-config
 
 packages:
 
@@ -1612,9 +1612,6 @@ packages:
       vite:
         optional: true
 
-  '@vitest/pretty-format@3.0.8':
-    resolution: {integrity: sha512-BNqwbEyitFhzYMYHUVbIvepOyeQOSFA/NeJMIP9enMntkkxLgOcgABH6fjyXG85ipTgvero6noreavGIqfJcIg==}
-
   '@vitest/pretty-format@3.0.9':
     resolution: {integrity: sha512-OW9F8t2J3AwFEwENg3yMyKWweF7oRJlMyHOMIhO5F3n0+cgQAJZBjNgrF8dLwFTEXl5jUqBLXd9QyyKv8zEcmA==}
 
@@ -1627,13 +1624,10 @@ packages:
   '@vitest/spy@3.0.9':
     resolution: {integrity: sha512-/CcK2UDl0aQ2wtkp3YVWldrpLRNCfVcIOFGlVGKO4R5eajsH393Z1yiXLVQ7vWsj26JOEjeZI0x5sm5P4OGUNQ==}
 
-  '@vitest/ui@3.0.8':
-    resolution: {integrity: sha512-MfTjaLU+Gw/lYorgwFZ06Cym+Mj9hPfZh/Q91d4JxyAHiicAakPTvS7zYCSHF+5cErwu2PVBe1alSjuh6L/UiA==}
+  '@vitest/ui@3.0.9':
+    resolution: {integrity: sha512-FpZD4aIv/qNpwkV3XbLV6xldWFHMgoNWAJEgg5GmpObmAOLAErpYjew9dDwXdYdKOS3iZRKdwI+P3JOJcYeUBg==}
     peerDependencies:
-      vitest: 3.0.8
-
-  '@vitest/utils@3.0.8':
-    resolution: {integrity: sha512-nkBC3aEhfX2PdtQI/QwAWp8qZWwzASsU4Npbcd5RdMPBSSLCpkZp52P3xku3s3uA0HIEhGvEcF8rNkBsz9dQ4Q==}
+      vitest: 3.0.9
 
   '@vitest/utils@3.0.9':
     resolution: {integrity: sha512-ilHM5fHhZ89MCp5aAaM9uhfl1c2JdxVxl3McqsdVyVNN6JffnEen8UMCdRTzOhGXNQGo5GNL9QugHrz727Wnng==}
@@ -4584,7 +4578,7 @@ snapshots:
       magicast: 0.3.5
       test-exclude: 7.0.1
       tinyrainbow: 2.0.0
-      vitest: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
+      vitest: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -4602,10 +4596,6 @@ snapshots:
       magic-string: 0.30.17
     optionalDependencies:
       vite: 6.2.2(@types/node@22.13.11)(tsx@4.19.1)
-
-  '@vitest/pretty-format@3.0.8':
-    dependencies:
-      tinyrainbow: 2.0.0
 
   '@vitest/pretty-format@3.0.9':
     dependencies:
@@ -4626,22 +4616,16 @@ snapshots:
     dependencies:
       tinyspy: 3.0.2
 
-  '@vitest/ui@3.0.8(vitest@3.0.9)':
+  '@vitest/ui@3.0.9(vitest@3.0.9)':
     dependencies:
-      '@vitest/utils': 3.0.8
+      '@vitest/utils': 3.0.9
       fflate: 0.8.2
       flatted: 3.3.3
       pathe: 2.0.3
       sirv: 3.0.1
       tinyglobby: 0.2.12
       tinyrainbow: 2.0.0
-      vitest: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1)
-
-  '@vitest/utils@3.0.8':
-    dependencies:
-      '@vitest/pretty-format': 3.0.8
-      loupe: 3.1.3
-      tinyrainbow: 2.0.0
+      vitest: 3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1)
 
   '@vitest/utils@3.0.9':
     dependencies:
@@ -6792,7 +6776,7 @@ snapshots:
       fsevents: 2.3.3
       tsx: 4.19.1
 
-  vitest@3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.8)(jsdom@26.0.0)(tsx@4.19.1):
+  vitest@3.0.9(@types/node@22.13.11)(@vitest/ui@3.0.9)(jsdom@26.0.0)(tsx@4.19.1):
     dependencies:
       '@vitest/expect': 3.0.9
       '@vitest/mocker': 3.0.9(vite@6.2.2(@types/node@22.13.11)(tsx@4.19.1))
@@ -6816,7 +6800,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.13.11
-      '@vitest/ui': 3.0.8(vitest@3.0.9)
+      '@vitest/ui': 3.0.9(vitest@3.0.9)
       jsdom: 26.0.0
     transitivePeerDependencies:
       - jiti

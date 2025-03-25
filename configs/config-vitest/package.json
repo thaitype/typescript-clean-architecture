@@ -1,5 +1,5 @@
 {
-  "name": "@acme/vitest-config",
+  "name": "@acme/config-vitest",
   "type": "module",
   "exports": {
     "./base": "./dist/configs/base-config.js",
@@ -13,12 +13,12 @@
     "view-report": "open coverage/report/index.html"
   },
   "devDependencies": {
-    "@acme/typescript-config": "workspace:*",
-    "@vitest/coverage-istanbul": "^3.0.8",
-    "@vitest/ui": "3.0.8",
+    "@acme/config-typescript": "workspace:*",
+    "@vitest/coverage-istanbul": "^3.0.9",
+    "@vitest/ui": "3.0.9",
     "glob": "^11.0.1",
     "jsdom": "^26.0.0",
     "nyc": "^17.1.0",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.9"
   }
 }

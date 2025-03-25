@@ -15,7 +15,7 @@
       "outputs": ["coverage/report/**"]
     },
     "view-report": {
-      "dependsOn": ["@acme/vitest-config#build", "report"],
+      "dependsOn": ["@acme/config-vitest#build", "report"],
       "cache": false
     }
   }
