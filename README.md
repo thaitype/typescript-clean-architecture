@@ -1,5 +1,7 @@
 # 🧱 Clean Architecture Template for TypeScript Monorepos
 
+[![Test and Build](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml)
+
 This is a **Clean Architecture starter template** designed for monorepos using **Turborepo** + **pnpm** + **TypeScript**. It's simple enough to get started quickly and scalable enough to grow into a large production system.
 
 ---
@@ -13,6 +15,8 @@ pnpm install
 pnpm dev
 ```
 
+Read all document in [docs](./docs) folder.
+
 ---
 
 ## 🧠 What is Clean Architecture?
@@ -23,15 +27,42 @@ pnpm dev
 - Code is **testable**, **modular**, and easy to **extend**
 - Dependencies always point **inward**, from outer layers toward the core
 
-## 🤔 Why Clean Architecture?
+## 🤔 Why This Project Helps You
 
-Clean Architecture helps you:
+By leveraging Clean Architecture, this template enables you to:
 
 - ✨ Write framework-agnostic business logic
 - 🧪 Test use cases in isolation (no DB or HTTP server needed)
 - 🧱 Structure your code for long-term maintainability
 - 🧩 Easily swap implementations (e.g. Mongo → Postgres, REST → GraphQL)
 - 👥 Onboard teammates faster with a predictable, layered system
+
+---
+
+## 🛠 Usage (Root-Level Scripts)
+
+The root `package.json` includes common scripts powered by `turbo`:
+
+
+### Script Descriptions
+
+- `dev`: Run all development servers/command in parallel,
+- `build`: Build all packages respecting their dependency graph
+- `test`: Run tests across all workspaces, including coverage test
+- `test:watch`: Watch and re-run tests interactively
+- `lint:check`: Run lint and type checks
+- `lint:fix`: Automatically fix lint issues
+- `format`: Check Prettier formatting
+- `format:fix`: Auto-format using Prettier
+- `test:coverage-report`: Run Show summary coverage report for all packages
+
+## How to run package in specific package
+
+For example to run only `cli` package:
+
+```bash
+pnpm run dev --filter=cli
+```
 
 ---
 
