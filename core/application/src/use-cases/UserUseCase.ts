@@ -1,8 +1,8 @@
 import { User } from '@thaitype.com/domain';
-import { IUserRepository } from '../interfaces/IUserRepository';
+import { IUserRepository } from '~/interfaces';
 
 export class UserUseCase {
-  constructor(private userRepo: IUserRepository) {}
+  constructor(private userRepo: IUserRepository) { }
 
   async create(data: { id: string; name: string; email: string }) {
     const user = new User(data.id, data.name, data.email);
