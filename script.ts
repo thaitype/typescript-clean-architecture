@@ -5,11 +5,11 @@ import path from 'path';
 async function listFilesWithContent() {
   const files = await tinyGlob('**', {
     filesOnly: true,
-    cwd: 'thaitype-t3'
+    cwd: 'thaitype-t3',
   });
 
   const results = await Promise.all(
-    files.map(async (file) => ({
+    files.map(async file => ({
       path: file,
       content: await readFile(path.join('thaitype-t3', file), 'utf-8'),
     }))
