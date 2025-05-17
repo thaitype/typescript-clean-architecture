@@ -1,0 +1,29 @@
+{
+  "name": "nextjs",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack --port 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint:check": "next lint --max-warnings 0",
+    "lint:fix": "next lint --fix",
+    "check-types": "mono check-types"
+  },
+  "dependencies": {
+    "next": "^15.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "@thaitype.com/database-drizzle": "workspace:*"
+  },
+  "devDependencies": {
+    "@thaitype.com/mono": "workspace:*",
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@thaitype.com/config-vitest": "workspace:*",
+    "@types/node": "^22.13.9",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
+  }
+}

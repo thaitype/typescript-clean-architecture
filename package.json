@@ -1,24 +1,43 @@
 {
+  "name": "typescript-clean-architecture",
   "private": true,
   "scripts": {
+    "prepare": "turbo run @thaitype.com/mono#build --output-logs=errors-only",
     "build": "turbo run build",
-    "db:migrate:deploy": "turbo run db:migrate:deploy",
-    "db:migrate:dev": "turbo run db:migrate:dev",
-    "db:push": "turbo run db:push",
-    "db:seed": "turbo run db:seed",
-    "dev": "turbo run dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "generate": "turbo run generate",
-    "lint": "turbo run lint"
-  },
-  "devDependencies": {
-    "prettier": "^3.2.5",
-    "tsx": "4.19.1",
-    "turbo": "^2.4.4"
+    "dev": "turbo run dev --filter=!./tools/template",
+    "lint:check": "turbo lint:check check-types && npm run format",
+    "lint:fix": "turbo lint:fix && npm run format:fix",
+    "format": "prettier --check ./**/*.{ts,tsx,js}",
+    "format:fix": "prettier --write ./**/*.{ts,tsx,js}",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "test:coverage-report": "turbo run view-report"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
-  "name": "with-prisma",
-  "packageManager": "pnpm@10.5.2"
+  "packageManager": "pnpm@10.5.2",
+  "dependencies": {
+    "@thaitype/ioctopus": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.18",
+    "@vitest/coverage-istanbul": "^3.0.9",
+    "esbuild": "^0.25.1",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 120,
+    "arrowParens": "avoid"
+  }
 }

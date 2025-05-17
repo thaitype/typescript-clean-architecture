@@ -1,0 +1,25 @@
+{
+  "name": "@thaitype.com/mono",
+  "type": "module",
+  "exports": {
+    ".": "./src/cli.ts"
+  },
+  "bin": {
+    "mono": "dist/cli.js"
+  },
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "lint:check": "eslint ./src",
+    "lint:fix": "eslint --fix ./src",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "execa": "^9.5.2"
+  },
+  "devDependencies": {
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@types/node": "^22.13.9"
+  }
+}

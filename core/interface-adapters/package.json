@@ -1,0 +1,25 @@
+{
+  "name": "@thaitype.com/interface-adapters",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "scripts": {
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
+  },
+  "dependencies": {
+    "@thaitype.com/application": "workspace:*"
+  },
+  "devDependencies": {   
+    "@thaitype.com/mono": "workspace:*",
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@thaitype.com/config-vitest": "workspace:*",
+    "@vitest/coverage-istanbul": "^3.0.8"
+  }
+}

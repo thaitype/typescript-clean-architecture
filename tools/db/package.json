@@ -1,0 +1,25 @@
+{
+  "name": "@thaitype.com/tools-db",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "scripts": {
+    "db:seed": "tsx scripts/seed.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "@thaitype.com/database-drizzle": "workspace:*"
+  },
+  "devDependencies": {
+    "@thaitype.com/mono": "workspace:*",
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@thaitype.com/config-vitest": "workspace:*"
+  }
+}
