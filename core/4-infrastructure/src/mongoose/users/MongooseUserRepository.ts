@@ -1,5 +1,5 @@
-import type { IUserRepository } from '@thaitype.com/application';
-import type { UserUseCaseArgs as Args, UserWithId } from '@thaitype.com/application';
+import type { IUserRepository } from '@acme/application';
+import type { UserUseCaseArgs as Args, UserWithId } from '@acme/application';
 import { MongooseUserModel } from './MongooseUserModel';
 import mongoose from 'mongoose';
 

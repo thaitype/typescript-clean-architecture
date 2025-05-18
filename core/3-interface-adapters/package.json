@@ -1,5 +1,5 @@
 {
-  "name": "@thaitype.com/interface-adapters",
+  "name": "@acme/interface-adapters",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -14,16 +14,16 @@
     "check-types:watch": "mono check-types:watch"
   },
   "dependencies": {
-    "@thaitype.com/shared": "workspace:*"
+    "@acme/shared": "workspace:*"
   },
   "devDependencies": {
-    "@thaitype.com/application": "workspace:*",
-    "@thaitype.com/domain": "workspace:*",
-    "@thaitype.com/infrastructure": "workspace:*",
-    "@thaitype.com/config-eslint": "workspace:*",
-    "@thaitype.com/config-typescript": "workspace:*",
-    "@thaitype.com/config-vitest": "workspace:*",
-    "@thaitype.com/mono": "workspace:*",
+    "@acme/application": "workspace:*",
+    "@acme/domain": "workspace:*",
+    "@acme/infrastructure": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*",
     "@vitest/coverage-istanbul": "^3.1.3"
   }
 }

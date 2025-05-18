@@ -1,3 +1,3 @@
-import { baseConfig } from '@thaitype.com/config-vitest/base';
+import { baseConfig } from '@acme/config-vitest/base';
 
 export default baseConfig;

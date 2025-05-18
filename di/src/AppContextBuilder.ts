@@ -1,12 +1,12 @@
 import { createContainer, createModule } from '@thaitype/ioctopus';
 import { registry } from './ServiceRegistry';
 
-import { MongooseClient, MongooseUserRepository } from '@thaitype.com/infrastructure';
-import { UserUseCase } from '@thaitype.com/application';
-import { UserController } from '@thaitype.com/interface-adapters';
+import { MongooseClient, MongooseUserRepository } from '@acme/infrastructure';
+import { UserUseCase } from '@acme/application';
+import { UserController } from '@acme/interface-adapters';
 
 import type { AppConfig } from './AppConfig';
-import { ConsoleLogger } from '@thaitype.com/shared';
+import { ConsoleLogger } from '@acme/shared';
 
 export class AppContextBuilder {
   private readonly container = createContainer(registry);

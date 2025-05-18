@@ -1,8 +1,5 @@
 import { execa } from 'execa';
-<<<<<<< HEAD
-=======
 import c from 'ansis';
->>>>>>> upstream/main
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -31,15 +28,10 @@ export async function runCommand(
   const subprocess = execa({ env: { FORCE_COLOR: 'true' }, stdout: 'pipe', ...execaOptions })`${[...commands]}`;
   subprocess.stdout.pipe(process.stdout);
   subprocess.stderr.pipe(process.stderr);
-<<<<<<< HEAD
-  await subprocess.catch(error => {
-    console.error(error);
-=======
   await subprocess.catch((error: unknown) => {
     // Do nothing, we just want to catch the error
     // and exit the process with a non-zero code
     // Due to subprocess pipe the via stdout and stderr
->>>>>>> upstream/main
     process.exit(1);
   });
 }

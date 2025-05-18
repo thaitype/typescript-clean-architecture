@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "@acme/config-typescript",
-=======
-  "name": "@thaitype.com/config-typescript",
->>>>>>> upstream/main
   "version": "0.0.0",
   "private": true,
   "publishConfig": {

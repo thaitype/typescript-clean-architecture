@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "@acme/mono",
-=======
-  "name": "@thaitype.com/mono",
->>>>>>> upstream/main
   "type": "module",
   "exports": {
     ".": "./src/cli.ts"
@@ -19,23 +15,12 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "execa": "^9.5.2"
-  },
-  "devDependencies": {
-    "@acme/config-eslint": "workspace:*",
-    "@acme/config-typescript": "workspace:*",
-    "@types/node": "^22.13.9"
-  }
-}
-=======
     "ansis": "^4.0.0",
     "execa": "^9.5.3"
   },
   "devDependencies": {
-    "@thaitype.com/config-eslint": "workspace:*",
-    "@thaitype.com/config-typescript": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
     "@types/node": "^22.15.18"
   }
 }
->>>>>>> upstream/main

@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-=======
 import '~/styles/globals.css';
 
 import { type Metadata } from 'next';
@@ -28,7 +22,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
->>>>>>> upstream/main
     </html>
   );
 }

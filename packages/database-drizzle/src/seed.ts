@@ -1,9 +1,5 @@
 import { users } from './schema';
-<<<<<<< HEAD
-import { DbContext } from './database';
-=======
 import type { DbContext } from './database';
->>>>>>> upstream/main
 
 /**
  * Execute seed the database

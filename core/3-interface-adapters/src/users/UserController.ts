@@ -1,5 +1,5 @@
-import { UserUseCase, type UserUseCaseArgs } from '@thaitype.com/application';
-import type { ILogger } from '@thaitype.com/shared';
+import { UserUseCase, type UserUseCaseArgs } from '@acme/application';
+import type { ILogger } from '@acme/shared';
 
 export class UserController {
   constructor(

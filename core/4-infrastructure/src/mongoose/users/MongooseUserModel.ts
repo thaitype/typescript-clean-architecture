@@ -1,4 +1,4 @@
-import type { User } from '@thaitype.com/domain';
+import type { User } from '@acme/domain';
 import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema<Partial<User>>(

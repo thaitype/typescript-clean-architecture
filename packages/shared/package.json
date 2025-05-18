@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "@acme/shared",
-=======
-  "name": "@thaitype.com/shared",
->>>>>>> upstream/main
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -14,28 +10,16 @@
     "test:watch": "mono test:watch",
     "lint:check": "mono lint:check",
     "lint:fix": "mono lint:fix",
-<<<<<<< HEAD
-    "check-types": "mono check-types"
-  },
-  "devDependencies": {
-    "@acme/mono": "workspace:*",
-    "@acme/config-eslint": "workspace:*",
-    "@acme/config-typescript": "workspace:*",
-    "@acme/config-vitest": "workspace:*"
-  }
-}
-=======
     "check-types": "mono check-types",
     "check-types:watch": "mono check-types:watch"
   },
   "devDependencies": {
-    "@thaitype.com/config-eslint": "workspace:*",
-    "@thaitype.com/config-typescript": "workspace:*",
-    "@thaitype.com/config-vitest": "workspace:*",
-    "@thaitype.com/mono": "workspace:*"
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*"
   },
   "dependencies": {
     "ansis": "^4.0.0"
   }
 }
->>>>>>> upstream/main

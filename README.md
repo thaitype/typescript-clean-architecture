@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🧱 Clean Architecture Template for TypeScript Monorepos
 
 [![Test and Build](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml)
@@ -256,14 +255,3 @@ Some codes template bring the idea from those repositories:
 - Next.js Clean Architecture: <https://github.com/nikolovlazar/nextjs-clean-architecture>
 - Next.js 15 on turborepo template: <https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/basic>
 - Vitest on Turbo Repo: <https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/with-vitest>
-=======
-# AI.thaitype.dev
-
-Based on https://github.com/thaitype/typescript-clean-architecture/pull/2
-
-## Start Mongo
-
-```bash
-docker compose up -d
-```
->>>>>>> upstream/main

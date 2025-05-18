@@ -1,13 +1,5 @@
 {
-<<<<<<< HEAD
   "extends": "@acme/config-typescript/base.json",
-=======
-<<<<<<<< HEAD:apps/nextjs/tsconfig.json
-  "extends": "@acme/config-typescript/nextjs.json",
-========
-  "extends": "@thaitype.com/config-typescript/base.json",
->>>>>>>> upstream/main:tools/db/tsconfig.json
->>>>>>> upstream/main
   "compilerOptions": { "plugins": [{ "name": "next" }] },
   "include": [
     "next-env.d.ts",

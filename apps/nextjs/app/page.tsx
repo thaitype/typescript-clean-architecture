@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-// import { fetchUsers } from "../data";
-
-export default async function IndexPage() {
-  // const users = await fetchUsers();
-
-  return (
-    <div>
-      <h1>User List: </h1>Í{/* <pre>{JSON.stringify(users, null, 2)}</pre> */}
-    </div>
-=======
 import Link from 'next/link';
 
 import { LatestPost } from '~/app/_components/post';
@@ -56,6 +45,5 @@ export default async function Home() {
         </div>
       </main>
     </HydrateClient>
->>>>>>> upstream/main
   );
 }

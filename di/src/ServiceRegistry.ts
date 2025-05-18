@@ -1,8 +1,8 @@
 import { createServiceRegistry } from '@thaitype/ioctopus';
-import { MongooseClient } from '@thaitype.com/infrastructure';
-import { type IUserRepository, UserUseCase } from '@thaitype.com/application';
-import { UserController } from '@thaitype.com/interface-adapters';
-import type { ILogger } from '@thaitype.com/shared';
+import { MongooseClient } from '@acme/infrastructure';
+import { type IUserRepository, UserUseCase } from '@acme/application';
+import { UserController } from '@acme/interface-adapters';
+import type { ILogger } from '@acme/shared';
 
 // prettier-ignore
 export const registry = createServiceRegistry()

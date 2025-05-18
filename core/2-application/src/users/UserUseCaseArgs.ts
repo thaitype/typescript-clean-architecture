@@ -1,5 +1,5 @@
-import type { User } from '@thaitype.com/domain';
-import type { SystemMetadataKeys } from '@thaitype.com/domain';
+import type { User } from '@acme/domain';
+import type { SystemMetadataKeys } from '@acme/domain';
 import type { WithId } from '../types';
 
 export type UserWithId = WithId<User>;

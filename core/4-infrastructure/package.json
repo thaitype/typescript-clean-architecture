@@ -1,5 +1,5 @@
 {
-  "name": "@thaitype.com/infrastructure",
+  "name": "@acme/infrastructure",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -14,14 +14,14 @@
     "check-types:watch": "mono check-types:watch"
   },
   "dependencies": {
-    "@thaitype.com/application": "workspace:*",
-    "@thaitype.com/domain": "workspace:*",
+    "@acme/application": "workspace:*",
+    "@acme/domain": "workspace:*",
     "mongoose": "^8.15.0"
   },
   "devDependencies": {
-    "@thaitype.com/config-eslint": "workspace:*",
-    "@thaitype.com/config-typescript": "workspace:*",
-    "@thaitype.com/config-vitest": "workspace:*",
-    "@thaitype.com/mono": "workspace:*"
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*"
   }
 }
