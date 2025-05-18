@@ -10,21 +10,22 @@
     "lint:check": "mono lint:check",
     "lint:fix": "mono lint:fix",
     "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch",
     "db:studio": "drizzle-kit studio",
     "generate": "drizzle-kit generate"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
     "@libsql/client": "^0.14.0",
-    "drizzle-orm": "^0.40.0",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.40.1",
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "@thaitype.com/mono": "workspace:*",
     "@thaitype.com/config-eslint": "workspace:*",
     "@thaitype.com/config-typescript": "workspace:*",
     "@thaitype.com/config-vitest": "workspace:*",
-    "@types/node": "^20.11.24",
-    "drizzle-kit": "^0.30.5"
+    "@thaitype.com/mono": "workspace:*",
+    "@types/node": "^20.17.47",
+    "drizzle-kit": "^0.30.6"
   }
 }

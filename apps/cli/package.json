@@ -4,23 +4,24 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "mono dev",
     "start": "mono start",
     "build": "mono build",
     "test": "mono test",
     "test:watch": "mono test:watch",
     "lint:check": "mono lint:check",
     "lint:fix": "mono lint:fix",
-    "check-types": "mono check-types"
+    "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch"
   },
   "dependencies": {
-    "@thaitype.com/di": "workspace:*"
+    "@thaitype.com/di": "workspace:*",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
-    "@thaitype.com/mono": "workspace:*",
     "@thaitype.com/config-eslint": "workspace:*",
     "@thaitype.com/config-typescript": "workspace:*",
     "@thaitype.com/config-vitest": "workspace:*",
-    "@types/node": "^22.13.9"
+    "@thaitype.com/mono": "workspace:*",
+    "@types/node": "^22.15.18"
   }
 }

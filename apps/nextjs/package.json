@@ -9,32 +9,33 @@
     "start": "next start",
     "lint:check": "next lint --max-warnings 0",
     "lint:fix": "next lint --fix",
-    "check-types": "mono check-types"
+    "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch"
   },
   "dependencies": {
-    "next": "^15.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "@thaitype.com/database-drizzle": "workspace:*",
     "@t3-oss/env-nextjs": "^0.12.0",
-    "@tanstack/react-query": "^5.69.0",
-    "@trpc/client": "^11.0.0",
-    "@trpc/react-query": "^11.0.0",
-    "@trpc/server": "^11.0.0",
+    "@tanstack/react-query": "^5.76.1",
+    "@thaitype.com/database-drizzle": "workspace:*",
+    "@trpc/client": "^11.1.2",
+    "@trpc/react-query": "^11.1.2",
+    "@trpc/server": "^11.1.2",
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "server-only": "^0.0.1",
-    "superjson": "^2.2.1",
-    "zod": "^3.24.2"
+    "superjson": "^2.2.2",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@thaitype.com/mono": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.7",
     "@thaitype.com/config-eslint": "workspace:*",
     "@thaitype.com/config-typescript": "workspace:*",
     "@thaitype.com/config-vitest": "workspace:*",
-    "@types/node": "^22.13.9",
+    "@thaitype.com/mono": "workspace:*",
+    "@types/node": "^22.15.18",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
-    "@tailwindcss/postcss": "^4.0.15",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.15"
+    "tailwindcss": "^4.1.7"
   }
 }

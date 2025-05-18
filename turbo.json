@@ -44,6 +44,10 @@
     "check-types": {
       "dependsOn": ["build-tools", "^check-types"]
     },
+    "check-types:watch": {
+       "cache": false,
+       "persistent": true
+    },
     "build-tools": {
       "dependsOn": ["@thaitype.com/config-vitest#build" , "@thaitype.com/mono#build"]
     },

@@ -1,0 +1,29 @@
+{
+  "name": "@thaitype.com/di",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "scripts": {
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch"
+  },
+  "dependencies": {
+    "@thaitype.com/shared": "workspace:*",
+    "@thaitype.com/application": "workspace:*",
+    "@thaitype.com/domain": "workspace:*",
+    "@thaitype.com/infrastructure": "workspace:*",
+    "@thaitype.com/interface-adapters": "workspace:*"
+  },
+  "devDependencies": {
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@thaitype.com/config-vitest": "workspace:*",
+    "@thaitype.com/mono": "workspace:*"
+  }
+}

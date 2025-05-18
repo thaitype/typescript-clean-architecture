@@ -13,13 +13,13 @@
     "check-types": "mono check-types"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "@thaitype.com/database-drizzle": "workspace:*"
+    "@thaitype.com/database-drizzle": "workspace:*",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
-    "@thaitype.com/mono": "workspace:*",
     "@thaitype.com/config-eslint": "workspace:*",
     "@thaitype.com/config-typescript": "workspace:*",
-    "@thaitype.com/config-vitest": "workspace:*"
+    "@thaitype.com/config-vitest": "workspace:*",
+    "@thaitype.com/mono": "workspace:*"
   }
 }

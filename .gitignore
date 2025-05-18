@@ -41,3 +41,5 @@ generated
 coverage.json
 
 tsconfig.tsbuildinfo
+
+.nx
