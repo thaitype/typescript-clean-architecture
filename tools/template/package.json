@@ -16,9 +16,9 @@
     "check-types": "mono check-types"
   },
   "devDependencies": {
-    "@acme/mono": "workspace:*",
     "@acme/config-eslint": "workspace:*",
     "@acme/config-typescript": "workspace:*",
-    "@acme/config-vitest": "workspace:*"
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*"
   }
 }

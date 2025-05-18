@@ -1,6 +1,5 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -44,6 +43,10 @@
     "format:fix": {},
     "check-types": {
       "dependsOn": ["build-tools", "^check-types"]
+    },
+    "check-types:watch": {
+       "cache": false,
+       "persistent": true
     },
     "build-tools": {
       "dependsOn": ["@acme/config-vitest#build" , "@acme/mono#build"]

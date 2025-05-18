@@ -9,6 +9,7 @@ const scripts: MonoScripts = {
   'build': 'esbuild ./src/index.ts --bundle --minify --platform=node --outfile=dist/index.js',
   'dev': 'tsx watch ./src/index.ts',
   'start': 'tsx ./src/index.ts',
+  'check-types:watch': 'tsc --noEmit --watch',
   'check-types': 'tsc --noEmit',
 };
 

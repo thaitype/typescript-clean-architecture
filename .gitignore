@@ -39,3 +39,7 @@ generated
 .env
 
 coverage.json
+
+tsconfig.tsbuildinfo
+
+.nx

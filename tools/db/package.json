@@ -13,13 +13,13 @@
     "check-types": "mono check-types"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "@acme/database-drizzle": "workspace:*"
+    "@acme/database-drizzle": "workspace:*",
+    "dotenv": "^16.5.0"
   },
   "devDependencies": {
-    "@acme/mono": "workspace:*",
     "@acme/config-eslint": "workspace:*",
     "@acme/config-typescript": "workspace:*",
-    "@acme/config-vitest": "workspace:*"
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*"
   }
 }

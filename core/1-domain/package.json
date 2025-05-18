@@ -1,0 +1,22 @@
+{
+  "name": "@acme/domain",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "scripts": {
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch"
+  },
+  "devDependencies": {
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*"
+  }
+}

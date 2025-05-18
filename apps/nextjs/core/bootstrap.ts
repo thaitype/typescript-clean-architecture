@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-import { getDbContext, DbContextWithSchema } from '@acme/database-drizzle';
+import { getDbContext, type DbContextWithSchema } from '@acme/database-drizzle';
 
 export const getEnvVariable = (name: string) => {
   const value = process.env[name];

@@ -1,6 +1,13 @@
 {
   "extends": "@acme/config-typescript/nextjs.json",
-  "compilerOptions": { "plugins": [{ "name": "next" }] },
+  "compilerOptions": {
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "plugins": [{ "name": "next" }] 
+  },
   "include": [
     "next-env.d.ts",
     "next.config.js",
