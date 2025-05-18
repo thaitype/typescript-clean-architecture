@@ -5,6 +5,8 @@
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
+    "noImplicitOverride": true,
+    "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
@@ -16,5 +18,7 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,117 +1,257 @@
-# TypeScript Clean Architecture
+# 🧱 Clean Architecture Template for TypeScript Monorepos
 
 [![Test and Build](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml/badge.svg)](https://github.com/thaitype/typescript-clean-architecture/actions/workflows/test-and-build.yml)
 
-> In progess!
+This is a **Clean Architecture starter template** designed for monorepos using **Turborepo** + **pnpm** + **TypeScript**. It's simple enough to get started quickly and scalable enough to grow into a large production system.
 
-This is turborepo starter with Drizzle ORM and PostgreSQL pre-configured.
+---
 
-> [!NOTE]
-> This example uses `pnpm` as package manager.
+## ⚡ Quick Start
 
-## Using this example
-
-Clone the repository:
-
-```sh
-git clone https://github.com/htsh-tsyk/turbo-drizzle.git
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/database`: Drizzle ORM wrapper to manage & access your database
-- `@repo/ui`: a stub React component library shared by a `web` application
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-- [Drizzle for database ORM](https://orm.drizzle.team/) for database ORM
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd turbo-drizzle
-cp apps/web/.env.default apps/web/.env
+```bash
+git clone https://github.com/your-org/your-repo.git
+cd your-repo
 pnpm install
-pnpm build
-```
-
-### Database
-
-We use [Drizzle ORM](https://orm.drizzle.team/) to manage & access our database. As such you will need a database for this project, either locally or hosted in the cloud.
-
-To make this process easier, we offer a [`docker-compose.yml`](https://docs.docker.com/compose/) file to deploy a PostgreSQL server locally with a new database named `repo_development` (To change this update the `POSTGRES_DB` environment variable in the `docker-compose.yml` file):
-
-```bash
-cd turbo-drizzle
-docker-compose up -d
-```
-
-Once deployed you will need to copy the `.env.default` file to `.env` in order for Drizzle to have a `DATABASE_URL` environment variable to access.
-
-```bash
-cp apps/web/.env.default apps/web/.env
-```
-
-If you added a custom database name, or use a cloud based database, you will need to update the `DATABASE_URL` in your `.env` accordingly.
-
-Once deployed & up & running, you will need to create & deploy migrations to your database to add the necessary tables. This can be done using [Drizzle Migrate](https://orm.drizzle.team/docs/migrations):
-
-in `database` package: (command `drizzle-kit generate`)
-
-```
-pnpm generate
-```
-
-```bash
-pnpm turbo db:migrate
-```
-
-An optional additional step is to seed some initial or fake data to your database.
-
-To do this update check the seed script located in `packages/database/scripts/seed.ts` & add or update any users you wish to seed to the database.
-
-Once edited run the following command to run tell Drizzle to run the seed script defined in the Drizzle configuration:
-
-```bash
-pnpm turbo db:seed
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```shell
 pnpm dev
 ```
 
-## Useful Links
+Read all document in [docs](./docs) folder.
 
-Learn more about the power of Turborepo:
+---
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## 🧠 What is Clean Architecture?
+
+**Clean Architecture** is a way to structure your application so that:
+
+- Business logic is **independent** from frameworks (e.g. Express, Next.js)
+- Code is **testable**, **modular**, and easy to **extend**
+- Dependencies always point **inward**, from outer layers toward the core
+
+## 🤔 Why This Project Helps You
+
+By leveraging Clean Architecture, this template enables you to:
+
+- ✨ Write framework-agnostic business logic
+- 🧪 Test use cases in isolation (no DB or HTTP server needed)
+- 🧱 Structure your code for long-term maintainability
+- 🧩 Easily swap implementations (e.g. Mongo → Postgres, REST → GraphQL)
+- 👥 Onboard teammates faster with a predictable, layered system
+
+---
+
+## 🛠 Usage (Root-Level Scripts)
+
+The root `package.json` includes common scripts powered by `turbo`:
+
+
+### Script Descriptions
+
+- `dev`: Run all development servers/command in parallel,
+- `build`: Build all packages respecting their dependency graph
+- `test`: Run tests across all workspaces, including coverage test
+- `test:watch`: Watch and re-run tests interactively
+- `lint:check`: Run lint and type checks
+- `lint:fix`: Automatically fix lint issues
+- `format`: Check Prettier formatting
+- `format:fix`: Auto-format using Prettier
+- `test:coverage-report`: Run Show summary coverage report for all packages
+
+## How to run package in specific package
+
+For example to run only `cli` package:
+
+```bash
+pnpm run dev --filter=cli
+```
+
+---
+
+## 🔰 Template Project Overview
+
+This project follows a modular monorepo layout:
+
+```bash
+.
+├── apps/                    # Applications (UI, CLI, etc)
+│   ├── nextjs/              # Next.js frontend (App Router)
+│   └── cli/                 # CLI tools (e.g., for batch scripts)
+│
+├── core/                   # Clean architecture layers
+│   ├── domain/             # Business entities, value objects
+│   ├── application/        # Use cases, interfaces
+│   ├── interface-adapters/ # Controllers, adapters, presenters
+│   ├── infrastructure/     # Implementations (e.g., repositories)
+│   └── di/                 # Dependency injection setup
+│
+├── packages/               # Modular services
+│   ├── database-drizzle/   # DB setup with Drizzle ORM
+│   └── shared/             # Cross-cutting shared utils
+│
+├── configs/                # Centralized configuration presets
+│   ├── config-eslint/      # Shared ESLint config
+│   ├── config-typescript/  # Shared TSConfig presets
+│   └── config-vitest/      # Shared Vitest setup
+│
+├── tools/                  # Toolchain scripts and helpers
+│   ├── db/                 # DB migration + seed tooling
+│   ├── mono/               # CLI wrapper for build/test/lint/dev
+│   └── template/           # Reusable project template package
+│
+├── turbo.json              # Task orchestration config
+└── pnpm-workspace.yaml     # Defines workspace structure
+```
+
+---
+
+## 📦 Template Generator
+
+To create a new package, copy and rename the `tools/template` folder:
+
+```bash
+cp -r tools/template core/new-package
+```
+
+This includes:
+- Preconfigured build/dev/test scripts
+- Standard tooling via `mono`
+- `tsconfig`, `eslint`, `vitest` setup
+- Minimal boilerplate with `lib` + test examples
+
+Just update the package name in `package.json` and start coding!
+
+---
+
+## 🔧 Build Tooling with Turborepo + Mono
+
+### 🧩 Centralized Toolchain via `tools/mono`
+
+We built a custom toolchain named `mono` to easily manage and control the build process across all packages.
+
+Instead of installing build tools like `esbuild`, `vitest`, and `eslint` in every package, we centralize them via:
+
+- `tools/mono`: Unified CLI for commands like `dev`, `test`, `build`
+- `configs/*`: Shared config presets for linting, TS, and testing
+
+Example `mono` script:
+```ts
+const scripts: MonoScripts = {
+  'lint:check': 'eslint src',
+  'lint:fix': 'eslint src --fix',
+  'test': 'vitest run',
+  'test:watch': 'vitest watch',
+  'build': 'esbuild ./src/index.ts --bundle --minify --platform=node --outfile=dist/index.js',
+  'dev': 'tsx watch ./src/index.ts',
+  'start': 'tsx ./src/index.ts',
+  'check-types': 'tsc --noEmit',
+};
+```
+
+### 🧪 How packages use `mono`
+
+Each package reuses the `mono` CLI by mapping local scripts:
+
+```json
+{
+  "scripts": {
+    "dev": "mono dev",
+    "start": "mono start",
+    "build": "mono build",
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types"
+  },
+  "devDependencies": {
+    "@acme/mono": "workspace:*",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*"
+  }
+}
+```
+
+### 🛠 Root `package.json` dependencies
+
+Tools are only installed once at the root:
+
+```json
+{
+  "devDependencies": {
+    "turbo": "^2.4.4",
+    "@vitest/coverage-istanbul": "^3.0.9",
+    "typescript": "^5.8.2",
+    "eslint": "^9.22.0",
+    "esbuild": "^0.25.1",
+    "prettier": "^3.5.3",
+    "vitest": "^3.0.9"
+  }
+}
+```
+
+### 🧠 Workspace definition
+
+```yaml
+# pnpm-workspace.yaml
+packages:
+  - "apps/*"
+  - "core/*"
+  - "packages/*"
+  - "configs/*"
+  - "tools/*"
+```
+
+---
+
+## 🔗 High-Level Dependency Diagram
+
+```mermaid
+graph TD
+
+A[domain] --> B[application]
+B --> C[interface-adapters]
+B --> D[infrastructure]
+C --> E[di]
+D --> E
+E --> F[apps/nextjs]
+E --> G[apps/cli]
+H[packages/database-drizzle] --> D
+I[packages/shared] --> B
+I --> C
+I --> D
+I --> E
+I --> F
+```
+
+---
+
+## 🧠 Dependency Injection
+
+This template uses [`@thaitype/ioctopus`](https://www.npmjs.com/package/@thaitype/ioctopus) — a simple, metadata-free IoC container for TypeScript that works across runtimes (Node, Edge, etc). 
+
+However, this project use a forked version of `ioctopus` when the original package is fully support type-safety, this project will switch back to the original package, see [issue#3](https://github.com/thaitype/ioctopus/issues/3)
+
+To resolve any service:
+
+```ts
+import { getInjection } from "@acme/di";
+const userController = getInjection("UserController");
+```
+
+---
+
+Happy coding! ✨ Let your architecture evolve, not collapse. 🏗️
+
+---
+
+## Read More
+- Basic Concept of Monorepo by Turborepo: <https://turbo.build/repo/docs/guides/tools/typescript>
+- Clean Architecture: <https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html>
 
 ## References
-- Drizzle Turbo Repo Template: https://github.com/htsh-tsyk/turbo-drizzle/tree/main
-- Next.js Clean Architecture: https://github.com/nikolovlazar/nextjs-clean-architecture/tree/main
-- Next.js 15 on turborepo template: https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/basic
+
+Some codes template bring the idea from those repositories:
+- Drizzle Turbo Repo Template: <https://github.com/htsh-tsyk/turbo-drizzle>
+- Next.js Clean Architecture: <https://github.com/nikolovlazar/nextjs-clean-architecture>
+- Next.js 15 on turborepo template: <https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/basic>
+- Vitest on Turbo Repo: <https://github.com/vercel/turborepo/tree/c59da312df134cc1aaf7c269bc3cd0b78c073b07/examples/with-vitest>

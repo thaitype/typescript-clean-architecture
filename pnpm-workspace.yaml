@@ -1,5 +1,7 @@
 packages:
+  - "di"
   - "apps/*"
+  - "core/*"
   - "packages/*"
   - "configs/*"
   - "tools/*"

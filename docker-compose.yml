@@ -1,14 +1,16 @@
-version: '3.9'
 services:
-  db:
-    image: postgres:17-alpine
-    environment:
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: repo_development
-    volumes:
-      - data:/var/lib/postgresql/data
+  mongo:
+    # Arm64 Architecture
+    image: arm64v8/mongo:7
+    # image: mongo:7 for x86_64 Architecture
     ports:
-      - '5432:5432'
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
 
 volumes:
-  data:
+  mongo_data:

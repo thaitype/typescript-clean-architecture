@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: 20.18.x
+  NODE_VERSION: 22.14.x
   # PNPM_VERSION: 10.5.x
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm lint:check
 
       # - name: Run tests
       #   run: pnpm test
@@ -43,6 +43,5 @@ jobs:
       - name: Prepare .env file
         run: cp apps/nextjs/.env.default apps/nextjs/.env
 
-      # Ignore build until fix server action build in Next.js
-      # - name: Build project
-      #   run: pnpm build
+      - name: Build project
+        run: pnpm build

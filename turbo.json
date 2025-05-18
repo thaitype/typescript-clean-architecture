@@ -19,10 +19,6 @@
     "db:seed": {
       "cache": false
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
     "db:migrate": {
       "outputs": []
     },
@@ -30,6 +26,34 @@
       "dependsOn": ["^generate"],
       "cache": false
     },
-    "lint": {}
+    "test": {
+      "dependsOn": ["build-tools", "^test"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint:check": {
+      "dependsOn": ["build-tools", "^lint:check"]
+    },
+    "lint:fix": {},
+    "format:check": {
+      "dependsOn": ["^format:check"]
+    },
+    "format:fix": {},
+    "check-types": {
+      "dependsOn": ["build-tools", "^check-types"]
+    },
+    "check-types:watch": {
+       "cache": false,
+       "persistent": true
+    },
+    "build-tools": {
+      "dependsOn": ["@acme/config-vitest#build" , "@acme/mono#build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
   }
 }

@@ -1,32 +1,41 @@
 {
-  "private": true,
-  "name": "web",
+  "name": "nextjs",
+  "version": "0.1.0",
   "type": "module",
-  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev --turbopack --port 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --max-warnings 0",
-    "db:seed": "tsx scripts/seed.ts",
-    "db:migrate": "tsx scripts/migrate.ts"
+    "lint:check": "next lint --max-warnings 0",
+    "lint:fix": "next lint --fix",
+    "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
-    "next": "^15.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@t3-oss/env-nextjs": "^0.12.0",
+    "@tanstack/react-query": "^5.76.1",
+    "@acme/database-drizzle": "workspace:*",
+    "@trpc/client": "^11.1.2",
+    "@trpc/react-query": "^11.1.2",
+    "@trpc/server": "^11.1.2",
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "server-only": "^0.0.1",
+    "superjson": "^2.2.2",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@acme/database-drizzle": "workspace:*",
-    "@acme/eslint-config": "workspace:*",
-    "@acme/typescript-config": "workspace:*",
-    "@next/eslint-plugin-next": "^14.1.1",
-    "@types/node": "^20.11.24",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*",
+    "@types/node": "^22.15.18",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
-    "eslint": "^9.21.0",
-    "tsx": "4.19.1",
-    "typescript": "5.8.2"
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.7"
   }
 }

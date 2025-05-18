@@ -1,30 +1,31 @@
 {
   "name": "@acme/database-drizzle",
-  "version": "1.0.0",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "test": "mono test",
+    "test:watch": "mono test:watch",
+    "lint:check": "mono lint:check",
+    "lint:fix": "mono lint:fix",
+    "check-types": "mono check-types",
+    "check-types:watch": "mono check-types:watch",
     "db:studio": "drizzle-kit studio",
     "generate": "drizzle-kit generate"
   },
   "dependencies": {
-    "dotenv": "^16.4.7",
     "@libsql/client": "^0.14.0",
-    "drizzle-orm": "^0.40.0",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.40.1",
     "postgres": "^3.4.5"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:*",
-    "@acme/typescript-config": "workspace:*",
-    "@types/node": "^20.11.24",
-    "drizzle-kit": "^0.30.5",
-    "eslint": "^9.21.0",
-    "rimraf": "^5.0.5",
-    "tsup": "^8.0.2",
-    "tsx": "4.19.1",
-    "typescript": "5.8.2"
+    "@acme/config-eslint": "workspace:*",
+    "@acme/config-typescript": "workspace:*",
+    "@acme/config-vitest": "workspace:*",
+    "@acme/mono": "workspace:*",
+    "@types/node": "^20.17.47",
+    "drizzle-kit": "^0.30.6"
   }
 }

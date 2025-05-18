@@ -1,5 +1,5 @@
-import { users } from "./schema";
-import { DbContext } from "./database";
+import { users } from './schema';
+import type { DbContext } from './database';
 
 /**
  * Execute seed the database
@@ -11,4 +11,3 @@ export async function seed(dbContext: DbContext) {
   }
   await client.end();
 }
-

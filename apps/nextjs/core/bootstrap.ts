@@ -1,7 +1,11 @@
 import 'dotenv/config';
 
-import { getDbContext, DbContextWithSchema } from "@acme/database-drizzle";
-import { getEnvVariable } from '../scripts/utils';
+import { getDbContext, type DbContextWithSchema } from '@acme/database-drizzle';
 
-export const dbContext: DbContextWithSchema = getDbContext(getEnvVariable("DATABASE_URL"));
+export const getEnvVariable = (name: string) => {
+  const value = process.env[name];
+  if (value == null) throw new Error(`environment variable ${name} not found`);
+  return value;
+};
 
+export const dbContext: DbContextWithSchema = getDbContext(getEnvVariable('DATABASE_URL'));
