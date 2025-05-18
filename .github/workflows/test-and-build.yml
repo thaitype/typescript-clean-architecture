@@ -9,7 +9,11 @@ on:
       - main
 
 env:
+<<<<<<< HEAD
   NODE_VERSION: 20.18.x
+=======
+  NODE_VERSION: 22.14.x
+>>>>>>> upstream/main
   # PNPM_VERSION: 10.5.x
 
 jobs:
@@ -43,6 +47,11 @@ jobs:
       - name: Prepare .env file
         run: cp apps/nextjs/.env.default apps/nextjs/.env
 
+<<<<<<< HEAD
       # Ignore build until fix server action build in Next.js
       # - name: Build project
       #   run: pnpm build
+=======
+      - name: Build project
+        run: pnpm build
+>>>>>>> upstream/main

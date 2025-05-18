@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "extends": ["@acme/config-typescript/base.json"],
+=======
+  "extends": ["@thaitype.com/config-typescript/base.json"],
+>>>>>>> upstream/main
   "compilerOptions": {
     "outDir": "dist",
   },

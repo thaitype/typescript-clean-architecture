@@ -45,8 +45,17 @@
     "check-types": {
       "dependsOn": ["build-tools", "^check-types"]
     },
+<<<<<<< HEAD
     "build-tools": {
       "dependsOn": ["@acme/config-vitest#build" , "@acme/mono#build"]
+=======
+    "check-types:watch": {
+       "cache": false,
+       "persistent": true
+    },
+    "build-tools": {
+      "dependsOn": ["@thaitype.com/config-vitest#build" , "@thaitype.com/mono#build"]
+>>>>>>> upstream/main
     },
     "dev": {
       "cache": false,

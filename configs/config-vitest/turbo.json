@@ -15,7 +15,11 @@
       "outputs": ["coverage/report/**"]
     },
     "view-report": {
+<<<<<<< HEAD
       "dependsOn": ["@acme/config-vitest#build", "report"],
+=======
+      "dependsOn": ["@thaitype.com/config-vitest#build", "report"],
+>>>>>>> upstream/main
       "cache": false
     }
   }

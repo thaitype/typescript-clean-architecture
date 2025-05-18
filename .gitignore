@@ -38,4 +38,12 @@ generated
 
 .env
 
+<<<<<<< HEAD
 coverage.json
+=======
+coverage.json
+
+tsconfig.tsbuildinfo
+
+.nx
+>>>>>>> upstream/main

@@ -1,6 +1,22 @@
 {
+<<<<<<< HEAD
+<<<<<<<< HEAD:apps/nextjs/tsconfig.json
   "extends": "@acme/config-typescript/nextjs.json",
+========
+  "extends": "@thaitype.com/config-typescript/base.json",
+>>>>>>>> upstream/main:tools/db/tsconfig.json
   "compilerOptions": { "plugins": [{ "name": "next" }] },
+=======
+  "extends": "@thaitype.com/config-typescript/nextjs.json",
+  "compilerOptions": { 
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "plugins": [{ "name": "next" }] 
+  },
+>>>>>>> upstream/main
   "include": [
     "next-env.d.ts",
     "next.config.js",

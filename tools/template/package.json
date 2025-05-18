@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "@acme/template",
+=======
+  "name": "@thaitype.com/template",
+>>>>>>> upstream/main
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -16,9 +20,18 @@
     "check-types": "mono check-types"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@acme/mono": "workspace:*",
     "@acme/config-eslint": "workspace:*",
     "@acme/config-typescript": "workspace:*",
     "@acme/config-vitest": "workspace:*"
   }
 }
+=======
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@thaitype.com/config-vitest": "workspace:*",
+    "@thaitype.com/mono": "workspace:*"
+  }
+}
+>>>>>>> upstream/main

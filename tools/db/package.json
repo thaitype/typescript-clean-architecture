@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "@acme/tools-db",
+=======
+  "name": "@thaitype.com/tools-db",
+>>>>>>> upstream/main
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -13,6 +17,7 @@
     "check-types": "mono check-types"
   },
   "dependencies": {
+<<<<<<< HEAD
     "dotenv": "^16.4.7",
     "@acme/database-drizzle": "workspace:*"
   },
@@ -23,3 +28,15 @@
     "@acme/config-vitest": "workspace:*"
   }
 }
+=======
+    "@thaitype.com/database-drizzle": "workspace:*",
+    "dotenv": "^16.5.0"
+  },
+  "devDependencies": {
+    "@thaitype.com/config-eslint": "workspace:*",
+    "@thaitype.com/config-typescript": "workspace:*",
+    "@thaitype.com/config-vitest": "workspace:*",
+    "@thaitype.com/mono": "workspace:*"
+  }
+}
+>>>>>>> upstream/main
